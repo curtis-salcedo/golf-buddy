@@ -9,9 +9,20 @@
     <header>
       <a href="/">HOME</a>
       &nbsp;|&nbsp;
+
+      <% if(user) { %>
       <a href="/schedules">SCHEDULE</a>
       &nbsp;|&nbsp;
       <a href="/courses">COURSES</a>
       &nbsp;|&nbsp;
+      <a href="/logout">LOG OUT</a>
+      &nbsp;|&nbsp;
+      <% } else { %>
+        <a href="/auth/google" class="login">LOGIN</a>
+      <% } %>
+
+      &nbsp;|&nbsp;
+      <a href="/">ABOUT</a>
+
     </header>
     <h3>Welcome to Golf Buddy</h3>

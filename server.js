@@ -46,9 +46,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(function (req, res, next) {
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err: {};
-})
+  res.locals.user = req.user;
+  next();
+});
 
 
 app.use('/', indexRouter);

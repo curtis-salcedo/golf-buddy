@@ -5,4 +5,18 @@
 <p>Then information for each course will populate under the drop down contents</p>
 <a href="/courses/new">ADD / EDIT COURSES</a>
 
+<table>
+  <thead>
+    <th>Course Name</th>
+    <th>Course Location</th>
+  </thead>
+  <tbody>
+    <% course.forEach(function(c) { %>
+      <tr> <%= c.courseName%> </tr>
+      <tr> <%= c.courseLocation%> </tr>
+    <% }) %>
+  </tbody>
+
+</table>
+
 <%- include('../partials/footer') %>

@@ -6,8 +6,9 @@ module.exports = {
   new: newCourse
 }
 
-function index(req, res) {
-  res.render('courses/index', {title: 'COURSE CONTROLLER > COURSES/INDEX'})
+async function index(req, res) {
+  const course = await Course.find( {} );
+  res.render('courses/index', {title: 'COURSE CONTROLLER > COURSES/INDEX', course})
 }
 
 function newCourse(req, res) {
