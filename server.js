@@ -4,13 +4,20 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// Express and Passport requires
+var session = require('express-session');
+var passport = require('passport');
+
 //
 var methodOverride = require('method-override')
-//
+
 require('dotenv').config();
 require('./config/database')
 
-//
+// Passport config require
+require('./config/passport')
+
+// Application Routers
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var coursesRouter = require('./routes/courses');
@@ -27,6 +34,22 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//
+app.use(session({
+  secret: process.env.SECRET,
+  resave: false,
+  saveUninitialized: true
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(function (req, res, next) {
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err: {};
+})
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
