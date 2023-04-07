@@ -1,4 +1,53 @@
 <%- include('../partials/header') %>
 
+  <table id="scorecard-table">
+    <thead>
+      <tr>
+        <td>hole</td>
+          <% course.courseScorecard.forEach(function(s) { %>
+            <td><%= s.hole %></td>
+          <% }) %>
+      </tr>
+      <tr>
+        <td>yardage</td>
+          <% course.courseScorecard.forEach(function(s) { %>
+            <td><%= s.yardage %></td>
+        <% }) %>
+      </tr>
+      <tr>
+        <td>par</td>
+          <% course.courseScorecard.forEach(function(s) { %>
+            <td><%= s.par %></td>
+        <% }) %>
+      </tr>
+      <!-- PLAYERS ON CARD FOR VIEWING ONLY -->
+      <tr>
+        <td>Player 1</td>
+          <% course.courseScorecard.forEach(function(s) { %>
+            <td></td>
+          <% }) %>
+      </tr>
+      <tr>
+        <td>Player 2</td>
+          <% course.courseScorecard.forEach(function(s) { %>
+            <td></td>
+          <% }) %>
+      </tr>
+      <tr>
+        <td>Player 3</td>
+          <% course.courseScorecard.forEach(function(s) { %>
+            <td></td>
+          <% }) %>
+      </tr>
+      <tr>
+        <td>Player 4</td>
+          <% course.courseScorecard.forEach(function(s) { %>
+            <td></td>
+          <% }) %>
+      </tr>
 
-<%- include('../partials/footer') %>
+    </thead>
+    <tbody>
+      </tbody>
+      
+  <%- include('../partials/footer') %>

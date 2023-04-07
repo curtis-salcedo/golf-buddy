@@ -10,8 +10,27 @@
   <input type="text" value="<%= course.courseLocation %>">
 </label>
 <br>
-<button type="submit">Show Scorecard</button>
 </form>
 
+<!-- BUTTON TO GET TO SCORECARD FOR COURSE BY ID -->
+<form method="GET" action="/courses/<%= course._id %>/scorecard">
+  <button type="submit">Show Scorecard</button>
+</form>
+
+<table>
+  <thead>
+    <tr>
+      PUT ALL HOLE NUMBERS ALONG TABLE HEADERS
+      <% course.courseScorecard.forEach(function(c) { %>
+      <th></th>
+      <% }) %>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
 
 <%- include('../partials/footer') %>

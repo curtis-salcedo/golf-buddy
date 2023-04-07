@@ -52,7 +52,7 @@ app.use(function (req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/courses', coursesRouter);
+app.use('/', coursesRouter);
 app.use('/schedules', schedulesRouter);
 
 // catch 404 and forward to error handler
