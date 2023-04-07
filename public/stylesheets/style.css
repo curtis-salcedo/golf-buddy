@@ -14,16 +14,21 @@ body {
   height: 100vh;
   margin: 0;
   display: grid;
-  grid-template-rows: 1fr 1fr 10fr;
+  grid-template-rows: 1fr .5fr .5fr 10fr;
   grid-template-areas:
-  "title"
+  "maintitle"
   "nav"
+  "subtitle"
   "main"
   ;
 }
 
 body > h1 {
-  grid-area: title;
+  grid-area: maintitle;
+}
+
+body > h2 {
+  grid-area: subtitle;
 }
 
 body > nav {
@@ -33,6 +38,7 @@ body > nav {
 
 body > main {
   grid-area: main;
+  display: flexbox;
   justify-content: center;
   align-items: center;
 }
@@ -44,6 +50,23 @@ body > main {
   justify-content: center;
   width: 30vw;
   height: 15vmin;
+}
+
+#scorecard-table {
+  grid-area: main;
+  border: solid 2px yellowgreen;
+  background-color: white;
+  justify-content: center;
+  width: 30vw;
+  height: 15vmin;
+}
+
+#scorecard-yardage {
+  width: 3vmin;
+}
+/* views/courses/show */
+#course-details {
+  grid-area: main;
 }
 
 #course-container {

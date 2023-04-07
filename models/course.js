@@ -4,7 +4,10 @@ const Schema = mongoose.Schema
 const courseSchema = new Schema({
   courseName: String,
   courseLocation: String,
-  courseScorecard: String,
+  courseScorecard: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Scorecard'
+  }]
 }, {
   timestamps: true
 })

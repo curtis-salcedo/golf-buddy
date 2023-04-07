@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+
+<h3>Scorecard</h3>
+
+<p>Edit or create a new scorecard here that is attached to a specific course</p>
+
+<p>The course scorecard should go here as a table</p>
+
+<form id="show-scorecard" action="/courses/<% course._id %>/scorecards/new" method="POST">
+  <button type="submit">Submit</button>
+</form>
+
+<%- include('../partials/footer') %>

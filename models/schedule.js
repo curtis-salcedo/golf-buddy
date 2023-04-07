@@ -8,3 +8,5 @@ const scheduleSchema = new Schema({
 }, {
   timestamps: true
 })
+
+module.exports = mongoose.model('Schedule', scheduleSchema);

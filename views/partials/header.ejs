@@ -4,12 +4,11 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-
-    <h1><%= title %></h1>
-      <nav>
-        <a href="/">HOME</a>
-        &nbsp;|&nbsp;
-        <% if(user) { %>
+    <h1>Golf Buddy</h1>
+    <nav>
+      <a href="/">HOME</a>
+      &nbsp;|&nbsp;
+      <% if(user) { %>
         <a href="/schedules">SCHEDULE</a>
         &nbsp;|&nbsp;
         <a href="/courses">COURSES</a>
@@ -18,7 +17,8 @@
         &nbsp;|&nbsp;
         <% } else { %>
           <a href="/auth/google" class="login">LOGIN</a>
-        <% } %>
-        &nbsp;|&nbsp;
-        <a href="/">ABOUT</a>
-      </nav>
+          <% } %>
+          &nbsp;|&nbsp;
+          <a href="/">ABOUT</a>
+        </nav>
+        <h2><%= title %></h2>

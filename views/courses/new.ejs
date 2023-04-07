@@ -5,7 +5,7 @@
 // This file will be a form to create/add/edit/delete a course on the schedule
 // It will be able to assign the times for tee times
 <p>Select a course from the drop down list to edit or select "add new course" to add a new course to the list</p>
-<form class="course-container" id="addCourse" action="/courses">
+<form class="course-container" id="addCourse" action="/courses/<% course._id %>/new">
   <h3>Courses</h3>
   <!-- <select name="courseName">Select your course
     <option>test course placeholder look to add function of existing courses</option>
@@ -14,8 +14,6 @@
   <input class="course-input" type="text" name="courseName" value="Course Name">
   <br>
   <input class="course-input" type="text" name="courseLocation" value="Course Location">
-  <br>
-  <input class="course-input" type="text" name="courseScorecard" value="Course Scorecard">
 
   <button type="submit">Submit</button>
 </form>
