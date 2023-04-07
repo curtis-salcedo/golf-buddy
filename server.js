@@ -8,7 +8,7 @@ var logger = require('morgan');
 var session = require('express-session');
 var passport = require('passport');
 
-//
+// Method Override requires
 var methodOverride = require('method-override')
 
 require('dotenv').config();

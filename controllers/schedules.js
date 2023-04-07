@@ -5,5 +5,5 @@ module.exports = {
 }
 
 function index(req, res) {
-  res.render('schedules/index', {title: 'SCHEDULES CONTROLLER > SCHEDULES/index'})
+  res.render('schedules/index', {title: 'Schedule'})
 }

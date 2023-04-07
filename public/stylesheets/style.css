@@ -1,14 +1,59 @@
 * {
-  
+  box-sizing: border-box;
+  background-color: green;
+}
+
+nav > a{
+  color: yellow;
+  border-radius: 3px;
+  border: solid 2px black;
 }
 
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: green;
   color: yellow;
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-rows: 1fr 1fr 10fr;
+  grid-template-areas:
+  "title"
+  "nav"
+  "main"
+  ;
 }
 
-a {
-  color: #00B7FF;
+body > h1 {
+  grid-area: title;
+}
+
+body > nav {
+  grid-area: nav;
+  align-content: space-between;
+}
+
+body > main {
+  grid-area: main;
+  justify-content: center;
+  align-items: center;
+}
+
+#course-table {
+  grid-area: main;
+  border: solid 2px yellowgreen;
+  background-color: white;
+  justify-content: center;
+  width: 30vw;
+  height: 15vmin;
+}
+
+#course-container {
+
+}
+
+#course-table {
+
+}
+
+#course-input {
+
 }

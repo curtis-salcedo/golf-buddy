@@ -5,7 +5,6 @@ const scheduleSchema = new Schema({
   date: Date,
   teeTime: Number,
   group: String
-  
 }, {
   timestamps: true
 })

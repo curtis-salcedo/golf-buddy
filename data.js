@@ -3,4 +3,4 @@ exports.courses = [
   {courseName: 'Willis Case', courseLocation: 'Denver, CO'}
 ];
 
-exports.schedule = [{}];
+exports.schedules = [{}];
