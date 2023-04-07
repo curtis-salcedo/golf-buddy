@@ -1,11 +1,4 @@
 <%- include('../partials/header') %>
 
-<div>Add or edit the scorecard for <%`${course.name}`%>/div>
-
-<form id="add-performer-form" action="/courses/<% course._id %>/scorecards/new" method="POST">
-  <label>Hole One</label>
-  <input type="number" name="one">
-  <input type="submit" value="Submit">
-</form>
 
 <%- include('../partials/footer') %>

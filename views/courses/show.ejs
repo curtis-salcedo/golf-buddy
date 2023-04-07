@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<form id="course-details" method="GET" action="/courses/<%= course._id %>/scorecards">
+<form id="course-details" method="GET" action="/courses/<%= course._id %>">
 
 <label name="courseName">
   <input type="text" value="<%= course.courseName %>">
@@ -13,10 +13,5 @@
 <button type="submit">Show Scorecard</button>
 </form>
 
-<form id="course-create" method="POST" action="/courses/<%= course._id %>/scorecards/new">
-
-<button type="submit">Add a Scorecard</button>
-
-</form>
 
 <%- include('../partials/footer') %>

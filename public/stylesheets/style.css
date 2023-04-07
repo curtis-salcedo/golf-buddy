@@ -14,7 +14,7 @@ body {
   height: 100vh;
   margin: 0;
   display: grid;
-  grid-template-rows: 1fr .5fr .5fr 10fr;
+  grid-template-rows: 1fr .5fr .5fr 5fr 5fr;
   grid-template-areas:
   "maintitle"
   "nav"
@@ -61,7 +61,7 @@ body > main {
   height: 15vmin;
 }
 
-#scorecard-yardage {
+#scorecard-cell {
   width: 3vmin;
 }
 /* views/courses/show */
