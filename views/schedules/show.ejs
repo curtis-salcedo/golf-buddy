@@ -1,7 +1,14 @@
 <%- include('../partials/header') %>
 
-<h2>THIS IS <strong>VIEWS / SCHEDULES / NEW.ejs</strong></h2>
-
-
+<label>Players
+  <select name="user">
+    <% users.forEach(function(u) { %>
+      <option value="name">
+      <%= u.name %>
+    </option>
+    <% }) %>
+  </select>
+</label>
+<br>
 
 <%- include('../partials/footer') %>

@@ -1,6 +1,40 @@
 <%- include('../partials/header') %>
 
-<h2>THIS IS <strong>VIEWS / SCHEDULES / NEW.ejs</strong></h2>
+<form id="addTeeTime" action="/schedules" method="POST">
+
+<label>Date
+  <input name="date" type="date" value="date">
+</label>
+<br>
+
+<label>Tee Time
+  <input name="time" type="time" value="date" min="06:00" max="15:00">
+</label>
+<br>
+<label>Number of Players
+</label>
+  <select name="groupSize" id="">
+    <option>4</option>
+    <option>3</option>
+    <option>2</option>
+    <option>1</option>
+  </select>
+<br>
+
+<label>Course
+  <select name="course">
+    <% course.forEach(function(c) { %>
+      <option value="<%= c.courseName %>">
+      <%= c.courseName %>
+    </option>
+    <% }) %>
+  </select>
+</label>
+<br>
+<button type="submit">Submit</button>
+</form>
+
+
 
 
 

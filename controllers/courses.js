@@ -1,4 +1,5 @@
 const Course = require('../models/course');
+const Schedule = require('../models/schedule')
 const { render } = require('../server');
 
 module.exports = {
@@ -11,7 +12,6 @@ module.exports = {
 // Render the "Scorecard" for the course selected
 async function scorecard(req, res) {
   const course = await Course.findById(req.params.id)
-  console.log(course)
   res.render(`scorecards/show`, { title: 'Scorecard', course})
 }
 

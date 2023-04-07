@@ -1,9 +1,49 @@
 <%- include('../partials/header') %>
 
-<h3>Season Schedule</h3>
-<h3>Weekly Groupings</h3>
-<h3>Course Information</h3>
-<h3>Dates with each schedule</h3>
-<h3>Scorecards?</h3>
+<form method="GET" action="/schedules/new">
+  <% if (user.email === 'curtissalcedo@gmail.com') { %>
+    <button type="submit">EDIT SCHEDULE</button>
+  <% } %>
+</form>
+
+<table id="schedule-table">
+  <thead>
+    <tr>
+      <th>Week</th>
+      <th>Date</th>
+      <th>Course</th>
+    </tr>
+    <tr>
+      <th>1</th>
+    </tr>
+    <tr>
+      <th>2</th>
+    </tr>
+    <tr>
+      <th>3</th>
+    </tr>
+    <tr>
+      <th>4</th>
+    </tr>
+    <tr>
+      <th>5</th>
+    </tr>
+    <tr>
+      <th>6</th>
+    </tr>
+    <tr>
+      <th>7</th>
+    </tr>
+    <tr>
+      <th>8</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
 
 <%- include('../partials/footer') %>

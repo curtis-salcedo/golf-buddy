@@ -30,4 +30,5 @@ exports.courses = [
     { hole: 9, yardage: 417, par: 4 },
   ],
 },
-];
+]
+

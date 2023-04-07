@@ -54,8 +54,8 @@ body > main {
 
 #scorecard-table {
   grid-area: main;
+  display: grid;
   border: solid 2px yellowgreen;
-  background-color: white;
   justify-content: center;
   width: 30vw;
   height: 15vmin;
@@ -79,4 +79,13 @@ body > main {
 
 #course-input {
 
+}
+
+#schedule-table {
+  grid-area: main;
+  border: solid 2px white;
+  justify-content: center;
+  width: 60vw;
+  height: 15vmin;
+  font-size: 5vmin;
 }
