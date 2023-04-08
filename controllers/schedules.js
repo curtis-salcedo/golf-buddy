@@ -1,6 +1,7 @@
 const Schedule = require('../models/schedule');
 const User = require('../models/user')
-const Course = require('../models/course')
+const Course = require('../models/course');
+const course = require('../models/course');
 
 module.exports = {
   index,
@@ -33,11 +34,9 @@ async function create(req, res) {
   // }
   try {
     const schedule = await Schedule.create({})
-    console.log(schedule)
     schedule.teeTime.push(newTeeTime)
     // course.teeTime.push(courseTeeTime)
     await schedule.save();
-    console.log(course)
     res.redirect(`/schedules`)
   } catch (err) {
     console.log(err)
@@ -55,6 +54,28 @@ async function show(req, res) {
   // res.render('schedules/show', { title: 'Edit Schedule', schedule, user})
 }
 
-function index(req, res) {
-  res.render('schedules/index', {title: 'Schedule'})
+async function index(req, res) {
+  const schedule = await Schedule.find({}).populate('teeTime.date')
+  console.log(schedule)
+  let group;
+  let fullDate;
+  let time;
+  let date;
+  for (let key in schedule) {
+    // console.log(schedule[key]._id)
+    // console.log(schedule[key].teeTime[0].groupSize)
+    // console.log(schedule[key].teeTime[0].time)
+    // console.log(schedule[key].teeTime[0].course)
+    // console.log(schedule[key].teeTime[0].date)
+    id = schedule[key].teeTime[0]._id
+    group = schedule[key].teeTime[0].groupSize
+    fullDate = schedule[key].teeTime[0].date
+    let month = fullDate.getMonth() + 1;
+      let day = fullDate.getDate();
+      let year = fullDate.getFullYear();
+      date =`${month}/${day}/${year}`;
+    time = schedule[key].teeTime[0].time
+  }
+  // console.log()
+  res.render('schedules/index', {title: 'Schedule', schedule, group, date, time})
 }

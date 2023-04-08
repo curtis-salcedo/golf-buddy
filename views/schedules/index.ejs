@@ -9,39 +9,27 @@
 <table id="schedule-table">
   <thead>
     <tr>
-      <th>Week</th>
       <th>Date</th>
-      <th>Course</th>
-    </tr>
-    <tr>
-      <th>1</th>
-    </tr>
-    <tr>
-      <th>2</th>
-    </tr>
-    <tr>
-      <th>3</th>
-    </tr>
-    <tr>
-      <th>4</th>
-    </tr>
-    <tr>
-      <th>5</th>
-    </tr>
-    <tr>
-      <th>6</th>
-    </tr>
-    <tr>
-      <th>7</th>
-    </tr>
-    <tr>
-      <th>8</th>
+      <th>Time</th>
+      <th>Group Size</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td></td>
+      <td>
+        <% if (date) { %>
+        <%= date %><% } %>
+      </td>
+      <td>
+        <% if (time) { %>
+        <%= time %><% } %>
+      </td>
+      <td>
+        <% if (group) { %>
+        <%= group %><% } %>
+      </td>
     </tr>
+    
   </tbody>
 </table>
 
