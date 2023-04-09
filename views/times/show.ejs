@@ -12,6 +12,9 @@
   <form action="/times/delete/<%= time._id %>/?_method=DELETE" method="POST">
     <button type="submit">DELETE SCORECARD</button>
   </form>
+  <form action="/times/edit/<%= time._id %>/?_method=EDIT" method="PUT">
+    <button type="submit">EDIT SCORECARD</button>
+  </form>
 
 <%- include('../partials/scorecard') %>
 

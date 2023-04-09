@@ -7,7 +7,17 @@ module.exports = {
   show,
   create,
   new: newTime,
-  delete: deleteTime
+  delete: deleteTime,
+  edit,
+  update
+}
+
+async function update(req, res) {
+
+}
+async function edit(req, res) {
+  const time =  await Time.findById(req.params.id)
+  res.render('times/edit', {time})
 }
 
 async function deleteTime(req, res) {

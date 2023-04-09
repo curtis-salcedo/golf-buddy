@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+
+<form id="addTime" action="/times/<%= time.id %>?_method=PUT" method="POST">
+
+test
+<h3>
+  <%console.log(time._id) %>
+  <%= time._id %>
+  <%= time.date %>
+  <%= time.time %>
+</h3>
+
+<%- include('../partials/footer') %>

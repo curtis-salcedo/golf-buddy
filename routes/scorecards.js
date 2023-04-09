@@ -6,5 +6,6 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 // All routers here start with /times
 router.get('/times/:id/scorecards', ensureLoggedIn, scorecardsRouter.index)
 router.get('/:id', ensureLoggedIn, scorecardsRouter.show)
+router.post('/scorecards', ensureLoggedIn, scorecardsRouter.create)
 
 module.exports = router;

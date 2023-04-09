@@ -34,23 +34,22 @@ Scorecard Info
         <td><%= totalPar %></td>
     </tr>
     <!-- PLAYERS ON CARD FOR VIEWING ONLY -->
-    
+  <form id="add-scorecard" action="/scorecards" method="POST">
   </thead>
   <tbody>
-    <% for (let i=0; i<4;i++) { %>
-
-      <tr>
-        <td>
-          <!-- START OF EACH SCORECARD ROW WITH A MAX OF 4 -->
-          <select>
-            <% users.forEach(function(u) { %>
-              <option value="<%= u._id %>"><%=  u.name %></option>
-            <% }) %>
-          </select>
-        </td>
-      </tr>
-      <% } %>
+    <tr>
+      <td>
+        <!-- START OF EACH SCORECARD ROW WITH A MAX OF 4 -->
+        <select name="user">
+          <% users.forEach(function(u) { %>
+            <option value="<%= u._id %>"><%=  u.name %></option>
+          <% }) %>
+        </select>
+      </td>
+    </tr>
   </tbody>
 </table>
-
+<button type="submit">Submit Scorecard</button>
+</form>
+    
 <%- include('../partials/footer') %>

@@ -10,16 +10,16 @@ const scorecardSchema = new Schema({
   course: {
     type: Schema.Types.ObjectId,
     ref: 'Course',
-    required: true
+    // required: true
   },
   score: {
     type: Number,
-    required: true
+    // required: true
   },
   time: {
     type: Schema.Types.ObjectId,
     ref: 'Time',
-    required: true
+    // required: true
   },
 }, {
   timestamps: true
