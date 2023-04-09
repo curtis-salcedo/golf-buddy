@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+
+<h3>
+  <%= `You are viewing all the previous tee times our group as played at ${times[0].course.courseName}` %>
+</h3>
+<p>
+  <% times.forEach(function(t) { %>
+    <%= t.date %>
+    <%= t.times %>
+    <a href=""></a>
+    <br>
+    <% }) %>
+
+</p>
+
+<%- include('../partials/footer') %>

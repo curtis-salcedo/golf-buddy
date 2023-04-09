@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+
+<h2>Scorecard</h2>
+
+<a href="/times/<%= time._id %>/scorecards">Scorecard</a>
+
+  <%= course.courseName %>
+  <%= time.date %>
+  <%= time.time %>
+  <%= time.groupSize %>
+
+  <form action="/times/delete/<%= time._id %>/?_method=DELETE" method="POST">
+    <button type="submit">DELETE SCORECARD</button>
+  </form>
+
+<%- include('../partials/scorecard') %>
+
+<%- include('../partials/footer') %>

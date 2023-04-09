@@ -1,12 +1,21 @@
 const Course = require('../models/course');
-const Schedule = require('../models/schedule')
-const { render } = require('../server');
+const Time = require('../models/time')
+const Scorecard = require('../models/scorecard');
+const course = require('../models/course');
 
 module.exports = {
   index,
   new: newCourse,
   show,
-  scorecard
+  scorecard,
+  history,
+}
+
+async function history(req, res) {
+  const courseId = req.params.id
+  const times = await Time.find({course: courseId}).populate('course','courseName')
+  console.log(times)
+  res.render(`courses/history`, {times, courseId})
 }
 
 // Render the "Scorecard" for the course selected
@@ -30,7 +39,6 @@ async function index(req, res) {
 async function newCourse(req, res) {
   try {
     const course = await Course.find();
-
     await course.save();
   } catch (err) {
     console.log(err)

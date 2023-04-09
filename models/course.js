@@ -1,15 +1,9 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema
+const Schema = mongoose.Schema;
 
-const courseSchema = new mongoose.Schema({
-  courseName: {
-    type: String,
-    required: true
-  },
-  courseLocation: {
-    type: String,
-    required: true
-  },
+const courseSchema = new Schema({
+  courseName: { type: String, required: true },
+  courseLocation: { type: String, required: true },
   courseScorecard: [{
     hole: {
       type: Number,
@@ -27,4 +21,4 @@ const courseSchema = new mongoose.Schema({
 });
 
 
-module.exports = mongoose.model('Course', courseSchema)
+module.exports = mongoose.model('Course', courseSchema);

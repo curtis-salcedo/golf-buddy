@@ -44,29 +44,18 @@ body > main {
 }
 
 #course-table {
-  grid-area: main;
-  border: solid 2px yellowgreen;
-  background-color: white;
-  justify-content: center;
-  width: 30vw;
-  height: 15vmin;
+
 }
 
 #scorecard-table {
-  grid-area: main;
-  display: grid;
-  border: solid 2px yellowgreen;
-  justify-content: center;
-  width: 30vw;
-  height: 15vmin;
+
 }
 
 #scorecard-cell {
-  width: 3vmin;
+
 }
 /* views/courses/show */
 #course-details {
-  grid-area: main;
 }
 
 #course-container {
@@ -81,11 +70,6 @@ body > main {
 
 }
 
-#schedule-table {
-  grid-area: main;
-  border: solid 2px white;
-  justify-content: center;
-  width: 60vw;
-  height: 15vmin;
-  font-size: 5vmin;
+#time-table {
+grid-area: main;
 }

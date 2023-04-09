@@ -27,7 +27,7 @@ exports.courses = [
     { hole: 6, yardage: 554, par: 5 },
     { hole: 7, yardage: 198, par: 3 },
     { hole: 8, yardage: 415, par: 4 },
-    { hole: 9, yardage: 417, par: 4 },
+    { hole: 9, yardage: 390, par: 4 },
   ],
 },
 ]

@@ -1,6 +1,7 @@
 const User = require('../models/user')
-const Schedule = require('../models/schedule');
+const Time = require('../models/time');
 const Course = require('../models/course')
+
 module.exports = {
 
 }

@@ -1,12 +1,11 @@
 <%- include('../partials/header') %>
 
-<form id="addTeeTime" action="/schedules" method="POST">
+<form id="addTime" action="/times" method="POST">
 
 <label>Date
   <input name="date" type="date" value="date">
 </label>
 <br>
-
 <label>Tee Time
   <input name="time" type="time" value="date" min="06:00" max="15:00">
 </label>
@@ -20,22 +19,17 @@
     <option>1</option>
   </select>
 <br>
-
 <label>Course
   <select name="course">
     <% course.forEach(function(c) { %>
-      <option value="<%= c.courseName %>">
-      <%= c.courseName %>
-    </option>
+      <option value="<%= c._id %>">
+        <%= c.courseName %>
+      </option>
     <% }) %>
   </select>
 </label>
 <br>
 <button type="submit">Submit</button>
 </form>
-
-
-
-
 
 <%- include('../partials/footer') %>

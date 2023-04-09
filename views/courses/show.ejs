@@ -17,10 +17,14 @@
   <button type="submit">Show Scorecard</button>
 </form>
 
+<form method="GET" action="/courses/<%= course._id %>/history">
+  <button type="submit">Show History</button>
+</form>
+
 <table>
   <thead>
     <tr>
-      PUT ALL HOLE NUMBERS ALONG TABLE HEADERS
+      <!-- PUT ALL HOLE NUMBERS ALONG TABLE HEADERS -->
       <% course.courseScorecard.forEach(function(c) { %>
       <th></th>
       <% }) %>

@@ -1,0 +1,10 @@
+var express = require('express');
+var router = express.Router();
+var scorecardsRouter = require('../controllers/scorecards');
+const ensureLoggedIn = require('../config/ensureLoggedIn');
+
+// All routers here start with /times
+router.get('/times/:id/scorecards', ensureLoggedIn, scorecardsRouter.index)
+router.get('/:id', ensureLoggedIn, scorecardsRouter.show)
+
+module.exports = router;
