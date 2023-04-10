@@ -55,5 +55,7 @@ Scorecard Info
 </table>
 <button type="submit">Submit Scorecard</button>
 <input type="hidden" name="courseId" value="<%= course._id %>" hidden>
+<% console.log(time.id) %>
+<input type="hidden" name="time" value="<%= time.id %>" hidden>
 </form>
 <%- include('../partials/footer') %>

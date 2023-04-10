@@ -16,7 +16,7 @@ async function create(req, res) {
     req.body
   )
     await scorecard.save()
-    res.redirect(`/times/${time.id}`)
+    res.redirect(`/times`)
   } catch (err) {
     console.log("scorecard create error: " + err)
     res.redirect('/times')

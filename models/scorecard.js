@@ -19,7 +19,7 @@ const scorecardSchema = new Schema({
   time: {
     type: Schema.Types.ObjectId,
     ref: 'Time',
-    // required: true
+    required: true
   },
 }, {
   timestamps: true

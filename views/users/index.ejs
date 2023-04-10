@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+
+<h1>Your History</h1>
+<%= user.name %>
+<br>
+<%= user.email %>
+<br>
+<%= user.id %>
+<br>
+<% user.googleId %>
+<br>
+<% user.avatar %>
+
+<h4>Tee Time History</h4>
+
+<% .forEach(function(u) {  %>
+
+  
+  <%= u.userDates %>
+  <br>
+  <%= u.userTimes %>
+  <br>
+  <%= u.userCourses %>
+  <br>
+  <%= u.userScorecards.score %>
+  
+  <% }) %>
+
+<%- include('../partials/footer') %>

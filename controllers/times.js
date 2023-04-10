@@ -36,7 +36,7 @@ async function deleteTime(req, res) {
   try {
     const deletedTime = await Time.findOneAndDelete({ _id: req.params.id });
     if (!deletedTime) {
-      console.log('no reference with time')
+      console.log('no time found')
       return;
     }
     res.redirect('/times');
