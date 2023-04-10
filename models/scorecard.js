@@ -7,25 +7,15 @@ const scorecardSchema = new Schema({
     ref: 'User',
     required: true
   },
-  course: {
+  courseId: {
     type: Schema.Types.ObjectId,
     ref: 'Course',
     // required: true
   },
-  scorecard: [{
-    hole: {
-      type: Number,
-      required: true
-    },
-    yardage: {
-      type: Number,
-      required: true
-    },
-    par: {
-      type: Number,
-      required: true
-    }
-  }],
+  score: {
+    type: Number,
+    required: true
+  },
   time: {
     type: Schema.Types.ObjectId,
     ref: 'Time',

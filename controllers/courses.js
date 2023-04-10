@@ -1,6 +1,5 @@
 const Course = require('../models/course');
 const Time = require('../models/time')
-const Scorecard = require('../models/scorecard');
 const course = require('../models/course');
 
 module.exports = {
