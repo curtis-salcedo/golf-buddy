@@ -10,16 +10,15 @@ module.exports = {
 }
 
 async function create(req, res) {
-  const time = await Time.findById(req.params.id)
-  console.log(time)
+  const time = Scorecard.find({})
+  try {
   const scorecard = await Scorecard.create({
     user: req.body.user,
-    course: req.body.course,
-    time: time.id
+    score: {
+      hole: req.body.hole},
   })
-  try {
     await scorecard.save()
-    res.redirect('/times')
+    res.redirect(`/times/${time.id}`, {time})
   } catch (err) {
     console.log(err)
     res.redirect('/times')

@@ -1,13 +1,32 @@
 <%- include('../partials/header') %>
 
-<form id="addTime" action="/times/<%= time.id %>?_method=PUT" method="POST">
+<form id="addTime" action="/times/<%= time._id %>?_method=PUT" method="POST">
 
-test
+  Time:<%= time._id %>
+  <br>
+  Course:<%= course._id %>
 <h3>
-  <%console.log(time._id) %>
-  <%= time._id %>
-  <%= time.date %>
-  <%= time.time %>
+  <label>Course:</label> <%= course.courseName %>
+<br>
+  <label>Date: 
+  <input name="date" type="date" value="<%= time.date %>">
+</label>
+  <br>
+  <label>Tee Time: 
+    <input name="time" type="time" min="06:00" max="15:00" value="<%= time.time %>">
+  </label>
+  <br>
+  <label>Number of Players: 
+    <select name="groupSize" default="<%= time.groupSize %>">
+      <option value="4"<%= time.groupSize === 4 ? 'selected' : '' %>>4</option>
+      <option value="3"<%= time.groupSize === 3 ? 'selected' : '' %>>3</option>
+      <option value="2"<%= time.groupSize === 2 ? 'selected' : '' %>>2</option>
+      <option value="1"<%= time.groupSize === 1 ? 'selected' : '' %>>1</option>
+    </select>
+  </label>
+  <br>
+  <button type="submit" href="<%= time.id %>"">Submit Changes
+  </button>
 </h3>
 
 <%- include('../partials/footer') %>

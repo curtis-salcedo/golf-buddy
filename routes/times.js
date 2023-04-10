@@ -9,7 +9,7 @@ router.get('/times/new', ensureLoggedIn, timesRouter.new)
 router.get('/times/:id', ensureLoggedIn, timesRouter.show)
 router.get('/times/edit/:id', ensureLoggedIn, timesRouter.edit)
 router.post('/times', ensureLoggedIn, timesRouter.create)
-router.get('/times/:id', ensureLoggedIn, timesRouter.update)
+router.put('/times/:id', ensureLoggedIn, timesRouter.update)
 router.delete('/times/delete/:id', ensureLoggedIn, timesRouter.delete)
 
 module.exports = router;

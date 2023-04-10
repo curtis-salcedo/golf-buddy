@@ -7,7 +7,8 @@ Scorecard Info
 
 <% let totalYardage = 0; %>
 <% let totalPar = 0; %>
-
+<% console.log(course.courseScorecard[0]) %>
+<% console.log(course.id) %>
 <table id="scorecard-table">
   <thead>
     <tr>
@@ -42,10 +43,14 @@ Scorecard Info
         <!-- START OF EACH SCORECARD ROW WITH A MAX OF 4 -->
         <select name="user">
           <% users.forEach(function(u) { %>
-            <option value="<%= u._id %>"><%=  u.name %></option>
+            <option value="<%= u._id %>"><%= u.name %></option>
           <% }) %>
         </select>
       </td>
+        <td>
+          <input name="score[hole1]" type="number" value="1">
+        </td>
+      </label>
     </tr>
   </tbody>
 </table>

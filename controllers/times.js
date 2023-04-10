@@ -1,6 +1,5 @@
 const Time = require('../models/time');
 const Course = require('../models/course');
-const Scorecard = require('../models/scorecard');
 
 module.exports = {
   index,
@@ -13,11 +12,24 @@ module.exports = {
 }
 
 async function update(req, res) {
-
+  try {
+    const updates = {
+      date: req.body.date,
+      time: req.body.time,
+      groupSize: req.body.groupSize
+    }
+    await Time.findByIdAndUpdate(req.params.id, updates)
+    res.redirect(`/times/${req.params.id}`)
+  } catch (err) {
+    console.log(err)
+    res.render('times/index')
+  }
 }
+
 async function edit(req, res) {
   const time =  await Time.findById(req.params.id)
-  res.render('times/edit', {time})
+  const course = await Course.findById(time.course)
+  res.render('times/edit', {time, course})
 }
 
 async function deleteTime(req, res) {
