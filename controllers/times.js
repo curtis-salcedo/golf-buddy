@@ -1,5 +1,6 @@
 const Time = require('../models/time');
 const Course = require('../models/course');
+const User = require('../models/user');
 
 module.exports = {
   index,
@@ -27,14 +28,16 @@ async function update(req, res) {
 }
 
 async function edit(req, res) {
+  const users = await User.find({})
   const time =  await Time.findById(req.params.id)
   const course = await Course.findById(time.course)
-  res.render('times/edit', {time, course})
+  res.render('times/edit', {time, course, users})
 }
 
 async function deleteTime(req, res) {
   try {
     const deletedTime = await Time.findOneAndDelete({ _id: req.params.id });
+    
     if (!deletedTime) {
       console.log('no time found')
       return;

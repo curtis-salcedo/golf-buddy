@@ -5,7 +5,7 @@ const scorecardSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User',
-    required: true
+    // required: true
   },
   courseId: {
     type: Schema.Types.ObjectId,
@@ -14,12 +14,12 @@ const scorecardSchema = new Schema({
   },
   score: {
     type: Number,
-    required: true
+    // required: true
   },
   time: {
     type: Schema.Types.ObjectId,
     ref: 'Time',
-    required: true
+    // required: true
   },
 }, {
   timestamps: true

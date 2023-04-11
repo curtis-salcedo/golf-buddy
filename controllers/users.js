@@ -8,18 +8,13 @@ module.exports = {
 }
 
 async function index(req, res) {
-  // console.log(req.user._id)
-  const scorecard = await Scorecard.find({})
+  try {
+  const scores = await Scorecard.find({ user: req.user._id})
   .populate('time')
   .populate('courseId')
-  // console.log(scorecard[0].user._id)
-  const userDates = scorecard[0].time.date
-  const userTimes = scorecard[0].time.time
-  const userCourses = scorecard[0].courseId.courseName
-  let userScorecards;
-  if (req.user._id.toString() === scorecard[0].user._id.toString()) {
-    // console.log("this is scorecard[0]" + scorecard[0])
-    userScorecards = scorecard[0]
+  console.log(scores.score)
+  res.render('users/index', {scores})
+} catch (err) {
+    console.log(err)
   }
-  res.render('users/index', {userScorecards, userDates, userTimes, userCourses})
 }

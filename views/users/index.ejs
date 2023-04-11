@@ -5,25 +5,37 @@
 <br>
 <%= user.email %>
 <br>
-<%= user.id %>
-<br>
-<% user.googleId %>
-<br>
-<% user.avatar %>
+
 
 <h4>Tee Time History</h4>
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Course</th>
+      <th>Time</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% scores.forEach(function(u){ %>
+      <tr>
+        <td>
+          <%= u.time.date %>
+        </td>
+        <td>
+          <%= u.courseId.courseName %>
+        </td>
+        <td>
+          <%= u.time.time %>
+        </td>
+        <td>
+          <%= u.score %>
+        </td>
+      <% }) %>
 
-<% .forEach(function(u) {  %>
-
-  
-  <%= u.userDates %>
-  <br>
-  <%= u.userTimes %>
-  <br>
-  <%= u.userCourses %>
-  <br>
-  <%= u.userScorecards.score %>
-  
-  <% }) %>
+    </tr>
+  </tbody>
+</table>
 
 <%- include('../partials/footer') %>

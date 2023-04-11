@@ -5,24 +5,30 @@
   Time:<%= time._id %>
   <br>
   Course:<%= course._id %>
+  <br>
+  Date: <%= time.date %>
+  <br> <%= users.name %>
 <h3>
   <label>Course:</label> <%= course.courseName %>
 <br>
-  <label>Date: 
-  <input name="date" type="date" value="<%= time.date %>">
+  <label>Current Date: <%= time.date.toDateString() %>
+<br>
 </label>
-  <br>
-  <label>Tee Time: 
-    <input name="time" type="time" min="06:00" max="15:00" value="<%= time.time %>">
-  </label>
-  <br>
-  <label>Number of Players: 
-    <select name="groupSize" default="<%= time.groupSize %>">
-      <option value="4"<%= time.groupSize === 4 ? 'selected' : '' %>>4</option>
-      <option value="3"<%= time.groupSize === 3 ? 'selected' : '' %>>3</option>
-      <option value="2"<%= time.groupSize === 2 ? 'selected' : '' %>>2</option>
-      <option value="1"<%= time.groupSize === 1 ? 'selected' : '' %>>1</option>
-    </select>
+<br>
+<label>Tee Time: 
+  <input name="time" type="time" min="06:00" max="15:00" value="<%= time.time %>">
+</label>
+<br>
+<label>Number of Players: 
+  <select name="groupSize" default="<%= time.groupSize %>">
+    <option value="4"<%= time.groupSize === 4 ? 'selected' : '' %>>4</option>
+    <option value="3"<%= time.groupSize === 3 ? 'selected' : '' %>>3</option>
+    <option value="2"<%= time.groupSize === 2 ? 'selected' : '' %>>2</option>
+    <option value="1"<%= time.groupSize === 1 ? 'selected' : '' %>>1</option>
+  </select>
+</label>
+<br>
+<label>Playing Partners
   </label>
   <br>
   <button type="submit" href="<%= time.id %>"">Submit Changes

@@ -10,7 +10,6 @@ module.exports = {
 }
 
 async function create(req, res) {
-  console.log(req.body.course)
   try {
   const scorecard = await Scorecard.create(
     req.body

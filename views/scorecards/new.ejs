@@ -38,16 +38,10 @@ Scorecard Info
   <tbody>
     <tr>
       <td>
-        <!-- START OF EACH SCORECARD ROW WITH A MAX OF 4 -->
-        <select name="user">
-          <% users.forEach(function(u) { %>
-            <option value="<%= u._id %>"><%= u.name %></option>
-          <% }) %>
-        </select>
+        <input name="user" hidden value="<%= user._id %>"><%= user.name %>
       </td>
         <td>
-          <%= course.courseScorecard.length %>
-          <input name="score" type="number">
+          <input id="score" type="number">
         </td>
       </label>
     </tr>
