@@ -1,8 +1,9 @@
 <%- include('../partials/header') %>
 
 Scorecard Info
+<section id="user-scorecard">
 <h3>
-  <%= `You are viewing the tee time for ${course.courseName} on ${time.date} at ${time.time} with ${time.groupSize} players` %>
+  <%= `You are viewing the tee time for ${course.courseName} on ${time.date.toDateString()} at ${time.time} with ${time.groupSize} players` %>
 </h3>
 
 <% let totalYardage = 0; %>
@@ -14,10 +15,10 @@ Scorecard Info
         <% course.courseScorecard.forEach(function(s) { %>
           <td><%= s.hole %></td>
         <% }) %>
-        <td>Total Score</td>
+        <td>Total</td>
     </tr>
     <tr>
-      <td>yardage</td>
+      <td>Yardage</td>
         <% course.courseScorecard.forEach(function(s) { %>
             <% totalYardage + s.yardage %>
             <td><%= s.yardage %></td>
@@ -25,7 +26,7 @@ Scorecard Info
         <td><%= totalYardage %></td>
         </tr>
     <tr>
-      <td>par</td>
+      <td>Par</td>
         <% course.courseScorecard.forEach(function(s) { %>
             <% totalPar + s.par %>
             <td><%= s.par %></td>
@@ -33,7 +34,7 @@ Scorecard Info
         <td><%= totalPar %></td>
     </tr>
     <!-- PLAYERS ON CARD FOR VIEWING ONLY -->
-  <form id="add-scorecard" action="/scorecards" method="POST">
+  <form action="/scorecards" method="POST">
   </thead>
   <tbody>
     <tr>
@@ -41,8 +42,36 @@ Scorecard Info
         <input name="user" hidden value="<%= user._id %>"><%= user.name %>
       </td>
         <td>
-          <input id="score" type="number">
+          <input name="score.one" type="number">
         </td>
+        <td>
+          <input name="score.two" type="number">
+        </td>
+        <td>
+          <input name="score.three" type="number">
+        </td>
+        <td>
+          <input name="score.four" type="number">
+        </td>
+        <td>
+          <input name="score.five" type="number">
+        </td>
+        <td>
+          <input name="score.six" type="number">
+        </td>
+        <td>
+          <input name="score.seven" type="number">
+        </td>
+        <td>
+          <input name="score.eight" type="number">
+        </td>
+        <td>
+          <input name="score.nine" type="number">
+        </td>
+        <td>
+
+        </td>
+
       </label>
     </tr>
   </tbody>
@@ -52,4 +81,5 @@ Scorecard Info
 <% console.log(time.id) %>
 <input type="hidden" name="time" value="<%= time.id %>" hidden>
 </form>
+</section>
 <%- include('../partials/footer') %>

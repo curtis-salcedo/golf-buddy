@@ -2,20 +2,22 @@
 
 <h2>Scorecard</h2>
 
-<a href="/times/<%= time._id %>/scorecards">Scorecard</a>
 
-  <%= course.courseName %>
-  <%= time.date %>
-  <%= time.time %>
-  <%= time.groupSize %>
-
-  <form action="/times/delete/<%= time._id %>/?_method=DELETE" method="POST">
-    <button type="submit">DELETE SCORECARD</button>
+<section id="times-show">
+  <div>
+    <%- include('../partials/scorecard') %>
+  </div>
+  <form action="/times/<%= time._id %>/scorecards">
+    <button type="submit">SHOW SCORECARD</button>
   </form>
+  <br>
   <form action="/times/edit/<%= time._id %>/?_method=EDIT" method="PUT">
     <button type="submit">EDIT SCORECARD</button>
   </form>
-
-<%- include('../partials/scorecard') %>
+  <br>
+  <form action="/times/delete/<%= time._id %>/?_method=DELETE" method="POST">
+    <button type="submit">DELETE SCORECARD</button>
+  </form>
+</section>
 
 <%- include('../partials/footer') %>

@@ -1,16 +1,15 @@
 * {
   box-sizing: border-box;
-  background-color: green;
+  background-color: #006747;
 }
 
 nav > a{
-  color: yellow;
+  color: #540d0a;
   border-radius: 3px;
-  border: solid 2px black;
 }
 
 body {
-  color: yellow;
+  color: #fcf400;
   height: 100vh;
   margin: 0;
   display: grid;
@@ -25,15 +24,22 @@ body {
 
 body > h1 {
   grid-area: maintitle;
+  justify-self: center;
+  font-size: 7vmin;
 }
 
 body > h2 {
   grid-area: subtitle;
+  justify-self: center;
+  font-size: 6vmin;
+  color: #540d0a;
 }
 
 body > nav {
   grid-area: nav;
-  align-content: space-between;
+  justify-self: center;
+  align-self: center;
+  font-size: 3.25vmin;
 }
 
 body > main {
@@ -43,33 +49,72 @@ body > main {
   align-items: center;
 }
 
-#course-table {
-
+table {
+  grid-area: main;
+  justify-self: center;
+  width: 80%;
 }
 
-#scorecard-table {
-
+th {
+  color: orange;
+  justify-content: center;
+  align-items: center;
+  border: solid .5vmin black;
+  font-size: 3.5vmin;
+}
+td {
+  color: orange;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: solid .5vmin black;
+  font-size: 3.25vmin;
 }
 
-#scorecard-cell {
-
-}
-/* views/courses/show */
-#course-details {
-}
-
-#course-container {
-
+#course-show {
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
-#course-table {
-
+#course-show > button {
+  font-size: 4.5vmin;
+  color: #fcf400;
+  width: 50%;
+  height: 6vmin;
+  margin: 5vmin;
+  border: solid .5vmin #fcf400;
 }
 
-#course-input {
-
+#times-show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
 }
 
-#time-table {
-grid-area: main;
+#times-show > form > button {
+font-size: 4.5vmin;
+color: #fcf400;
+width: 60%;
+height: 6vmin;
+margin: 5vmin;
+border: solid .5vmin #fcf400;
+margin: 0 auto;
+}
+
+#scorecard-partials > table{
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+#user-scorecard input {
+  height: 4vmin;
+  width: 4vw;
+}
+
+#user-scorecard {
+  width: 100%;
 }

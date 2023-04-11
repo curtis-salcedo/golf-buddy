@@ -1,40 +1,23 @@
 <%- include('../partials/header') %>
 
-<form id="course-details" method="GET" action="/courses/<%= course._id %>">
-
+<h2>
 <label name="courseName">
-  <input type="text" value="<%= course.courseName %>">
-</label>
+<%= course.courseName %>
+</label>  
 <br>
 <label name="courseLocation">
-  <input type="text" value="<%= course.courseLocation %>">
+<%= course.courseLocation %>
 </label>
-<br>
-</form>
+</h2>
 
 <!-- BUTTON TO GET TO SCORECARD FOR COURSE BY ID -->
-<form method="GET" action="/courses/<%= course._id %>/scorecard">
+<label>
+<form id="course-show" method="GET" action="/courses/<%= course._id %>/scorecard">
   <button type="submit">Show Scorecard</button>
 </form>
 
-<form method="GET" action="/courses/<%= course._id %>/history">
+<form id="course-show" method="GET" action="/courses/<%= course._id %>/history">
   <button type="submit">Show History</button>
 </form>
-
-<table>
-  <thead>
-    <tr>
-      <!-- PUT ALL HOLE NUMBERS ALONG TABLE HEADERS -->
-      <% course.courseScorecard.forEach(function(c) { %>
-      <th></th>
-      <% }) %>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
-
+</label>
 <%- include('../partials/footer') %>

@@ -1,13 +1,6 @@
 <%- include('../partials/header') %>
 
-<h1>Your History</h1>
-<%= user.name %>
-<br>
-<%= user.email %>
-<br>
-
-
-<h4>Tee Time History</h4>
+<h2>Your History</h2>
 <table>
   <thead>
     <tr>
@@ -30,10 +23,11 @@
           <%= u.time.time %>
         </td>
         <td>
-          <%= u.score %>
+          <% let scoreTotal = Object.values(u.score) %>
+          <% let reduce = scoreTotal.reduce((acc, x) => acc + x, 0); %>
+          <%= reduce %>
         </td>
-      <% }) %>
-
+        <% }) %>
     </tr>
   </tbody>
 </table>

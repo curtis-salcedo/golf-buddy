@@ -49,7 +49,9 @@ async function deleteTime(req, res) {
 }
 
 async function index(req, res) {
-  const times = await Time.find({}).sort('date')
+  const times = await Time.find({})
+  .populate('course')
+  .sort('date')
   res.render('times/index', { times })
 }
 

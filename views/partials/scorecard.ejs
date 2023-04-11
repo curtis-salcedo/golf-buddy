@@ -1,7 +1,41 @@
 <% let totalYardage; %>
 <% let totalPar; %>
+<section id="scorecard-partials">
 
-<table id="scorecard-table">
+<table>
+  <tr>
+    <td>
+      Course Name
+    </td>
+    <td>
+      Date
+    </td>
+    <td>
+      Tee Time
+    </td>
+    <td>
+      Group Size
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= course.courseName %>
+    </td>
+    <td>
+      <%= time.date %>
+    </td>
+    <td>
+      <%= time.time %>
+    </td>
+    <td>
+      <%= time.groupSize %>
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<table>
   <thead>
     <tr>
       <td>hole</td>
@@ -9,27 +43,22 @@
           <td><%= s.hole %></td>
         <% }) %>
         <td>FRONT 9</td>
-    </tr>
-    <tr>
-      <td>yardage</td>
+      </tr>
+      <tr>
+        <td>yardage</td>
         <% course.courseScorecard.forEach(function(s) { %>
             <% totalYardage + s.yardage %>
             <td><%= s.yardage %></td>
           <% }) %>
         <td><%= totalYardage %></td>
         </tr>
-    <tr>
-      <td>par</td>
+      <tr>
+        <td>par</td>
         <% course.courseScorecard.forEach(function(s) { %>
             <% totalPar + s.par %>
             <td><%= s.par %></td>
           <% }) %>
         <td><%= totalPar %></td>
-    </tr>
-    <!-- PLAYERS ON CARD FOR VIEWING ONLY -->
-    
-    <tr>
-
-  </thead>
-  <tbody>
-  </tbody>
+    </thead>
+  </table>
+</section>

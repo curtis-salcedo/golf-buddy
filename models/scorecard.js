@@ -13,8 +13,15 @@ const scorecardSchema = new Schema({
     // required: true
   },
   score: {
-    type: Number,
-    // required: true
+    one: Number,
+    two: Number,
+    three: Number,
+    four: Number,
+    five: Number,
+    six: Number,
+    seven: Number,
+    eight: Number,
+    nine: Number,
   },
   time: {
     type: Schema.Types.ObjectId,

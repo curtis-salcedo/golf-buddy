@@ -1,60 +1,61 @@
 <%- include('../partials/header') %>
 <% let totalYardage = 0; %>
 <% let totalPar = 0; %>
+<section id="scorecard-table">
+<table>
+  <thead>
+    <tr>
+      <td>hole</td>
+        <% course.courseScorecard.forEach(function(s) { %>
+          <td><%= s.hole %></td>
+        <% }) %>
+        <td>Totals</td>
+    </tr>
+    <tr>
+      <td>yardage</td>
+        <% course.courseScorecard.forEach(function(s) { %>
+            <% totalYardage += s.yardage %>
+            <td><%= s.yardage %></td>
+          <% }) %>
+        <td><%= totalYardage %></td>
+        </tr>
+    <tr>
+      <td>par</td>
+        <% course.courseScorecard.forEach(function(s) { %>
+            <% totalPar += s.par %>
+            <td><%= s.par %></td>
+          <% }) %>
+        <td><%= totalPar %></td>
+    </tr>
+    <!-- PLAYERS ON CARD FOR VIEWING ONLY -->
+    <tr>
+      <td>Player 1</td>
+        <% course.courseScorecard.forEach(function(s) { %>
+          <td></td>
+        <% }) %>
+    </tr>
+    <tr>
+      <td>Player 2</td>
+        <% course.courseScorecard.forEach(function(s) { %>
+          <td></td>
+        <% }) %>
+    </tr>
+    <tr>
+      <td>Player 3</td>
+        <% course.courseScorecard.forEach(function(s) { %>
+          <td></td>
+        <% }) %>
+    </tr>
+    <tr>
+      <td>Player 4</td>
+        <% course.courseScorecard.forEach(function(s) { %>
+          <td></td>
+        <% }) %>
+    </tr>
 
-  <table id="scorecard-table">
-    <thead>
-      <tr>
-        <td>hole</td>
-          <% course.courseScorecard.forEach(function(s) { %>
-            <td><%= s.hole %></td>
-          <% }) %>
-          <td>Totals</td>
-      </tr>
-      <tr>
-        <td>yardage</td>
-          <% course.courseScorecard.forEach(function(s) { %>
-              <% totalYardage += s.yardage %>
-              <td><%= s.yardage %></td>
-            <% }) %>
-          <td><%= totalYardage %></td>
-          </tr>
-      <tr>
-        <td>par</td>
-          <% course.courseScorecard.forEach(function(s) { %>
-              <% totalPar += s.par %>
-              <td><%= s.par %></td>
-            <% }) %>
-          <td><%= totalPar %></td>
-      </tr>
-      <!-- PLAYERS ON CARD FOR VIEWING ONLY -->
-      <tr>
-        <td>Player 1</td>
-          <% course.courseScorecard.forEach(function(s) { %>
-            <td></td>
-          <% }) %>
-      </tr>
-      <tr>
-        <td>Player 2</td>
-          <% course.courseScorecard.forEach(function(s) { %>
-            <td></td>
-          <% }) %>
-      </tr>
-      <tr>
-        <td>Player 3</td>
-          <% course.courseScorecard.forEach(function(s) { %>
-            <td></td>
-          <% }) %>
-      </tr>
-      <tr>
-        <td>Player 4</td>
-          <% course.courseScorecard.forEach(function(s) { %>
-            <td></td>
-          <% }) %>
-      </tr>
-
-    </thead>
-    <tbody>
-      </tbody>
-      
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</section> 
   <%- include('../partials/footer') %>

@@ -1,15 +1,14 @@
 <%- include('../partials/header') %>
 
-<br>
-
-<form method="GET" action="/times/new">
+<form id="add-tee-time" method="GET" action="/times/new">
   <% if (user.email === 'curtissalcedo@gmail.com') { %>
     <button type="submit">ADD TEE TIME</button>
   <% } %>
 </form>
-
-<table id="time-table">
-  <thead>
+<section id="time-index">
+  
+  <table id="time-table">
+    <thead>
     <tr>
       <th>Course</th>
       <th>Date</th>
@@ -21,14 +20,17 @@
   <tbody>
     <% times.forEach(function(t) { %>
       <tr>
-        <td><%= t.course %></td>
-        <td><%= t.date  %></td>
-        <td><%= t.time  %></td>
+        <td><%= t.course.courseName %></td>
+        <td><%= t.date.toDateString() %></td>
+        <td><%= t.time %></td>
         <td><%= t.groupSize  %></td>
         <td><a href="/times/<%= t._id %>">DETAILS</a></td>
       </tr>
       <% }); %>
     </tbody>
   </table>
+  
+
+</section>
 
 <%- include('../partials/footer') %>

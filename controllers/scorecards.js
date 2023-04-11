@@ -11,11 +11,11 @@ module.exports = {
 
 async function create(req, res) {
   try {
-  const scorecard = await Scorecard.create(
-    req.body
-  )
-    await scorecard.save()
-    res.redirect(`/times`)
+    const scorecard = await Scorecard.create(
+      req.body
+    )
+      await scorecard.save()
+      res.redirect(`/times`)
   } catch (err) {
     console.log("scorecard create error: " + err)
     res.redirect('/times')

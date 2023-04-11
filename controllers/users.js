@@ -12,7 +12,7 @@ async function index(req, res) {
   const scores = await Scorecard.find({ user: req.user._id})
   .populate('time')
   .populate('courseId')
-  console.log(scores.score)
+    console.log(scores)
   res.render('users/index', {scores})
 } catch (err) {
     console.log(err)
