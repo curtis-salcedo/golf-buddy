@@ -38,7 +38,6 @@
         <% course.courseScorecard.forEach(function(s) { %>
           <td><%= s.hole %></td>
         <% }) %>
-        <td>FRONT 9</td>
       </tr>
       <tr>
         <td>yardage</td>
@@ -46,7 +45,6 @@
             <% totalYardage + s.yardage %>
             <td><%= s.yardage %></td>
           <% }) %>
-        <td><%= totalYardage %></td>
         </tr>
       <tr>
         <td>par</td>
@@ -54,7 +52,6 @@
             <% totalPar + s.par %>
             <td><%= s.par %></td>
           <% }) %>
-        <td><%= totalPar %></td>
     </thead>
   </table>
 </section>

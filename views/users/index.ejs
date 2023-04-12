@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<h2>Your History</h2>
+<h2>My Buddy</h2>
 <table>
   <thead>
     <tr>
@@ -33,11 +33,11 @@
       </tr>
     </tbody>
   </table>
-  <section id="history-stats">
-    Average Strokes: <%let average = (summary / scores.length) %>
-    <%= average.toFixed(1) %>
-  </section>
-
+  
+<section id="history-stats">
+  Average Strokes: <%let average = (summary / scores.length) %>
+  <%= average.toFixed(1) %>
+</section>
 
 
 <%- include('../partials/footer') %>

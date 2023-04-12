@@ -1,6 +1,11 @@
 console.log('javascript running')
 
 function count() {
-  const one = document.getElementById('find').value
-  console.log(one);
+  const total = document.querySelectorAll('.total')
+  let sum = 0;
+  total.forEach(function(x) {
+    sum += parseInt(x.value) || 0;
+  })
+  console.log(sum)
+  document.getElementById('countTotal').innerHTML = sum;
 }

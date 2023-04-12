@@ -46,34 +46,36 @@ Scorecard Info
             <% console.log('placeholder') %>
             <options></options>
           </select> -->
-          <input name="score.one" type="text" id="find" onchange="count()">
+          <input name="score.one" type="number" class="total" onchange="count()">
         </td>
         <td>
-          <input name="score.two" type="number">
+          <input name="score.two" type="number" class="total" onchange="count()">
         </td>
         <td>
-          <input name="score.three" type="number">
+          <input name="score.three" type="number" class="total" onchange="count()">
         </td>
         <td>
-          <input name="score.four" type="number">
+          <input name="score.four" type="number" class="total" onchange="count()">
         </td>
         <td>
-          <input name="score.five" type="number">
+          <input name="score.five" type="number" class="total" onchange="count()">
         </td>
         <td>
-          <input name="score.six" type="number">
+          <input name="score.six" type="number" class="total" onchange="count()">
         </td>
         <td>
-          <input name="score.seven" type="number">
+          <input name="score.seven" type="number" class="total" onchange="count()">
         </td>
         <td>
-          <input name="score.eight" type="number">
+          <input name="score.eight" type="number" class="total" onchange="count()">
         </td>
         <td>
-          <input name="score.nine" type="number">
+          <input name="score.nine" type="number" class="total" onchange="count()">
         </td>
         <td>
-
+          <div  id="countTotal">
+            <input type="hidden" name="totalScore" value="<%= scores.totalScore %>">0
+          </div>
         </td>
 
       </label>

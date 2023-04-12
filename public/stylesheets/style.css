@@ -123,13 +123,3 @@ border: solid .5vmin #fcf400;
   color: #fcf400;
   height: 5vmin;
 }
-
-#scorecard-new::-webkit-outer-spin-button,
-#scorecard-new::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-#scorecard-new {
-  -moz-appearance: textfield;
-}

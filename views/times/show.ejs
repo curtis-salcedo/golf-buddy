@@ -10,11 +10,9 @@
   <form action="/times/<%= time._id %>/scorecards">
     <button type="submit">SHOW SCORECARD</button>
   </form>
-  <br>
   <form action="/times/edit/<%= time._id %>/?_method=EDIT" method="PUT">
-    <button type="submit">EDIT SCORECARD</button>
+    <button type="submit">EDIT TEE TIME</button>
   </form>
-  <br>
   <form action="/times/delete/<%= time._id %>/?_method=DELETE" method="POST">
     <button type="submit">DELETE SCORECARD</button>
   </form>
