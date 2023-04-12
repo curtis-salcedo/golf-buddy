@@ -11,7 +11,7 @@ nav > a{
 body {
   color: #fcf400;
   height: 100vh;
-  margin: 0;
+  margin: 0 auto;
   display: grid;
   grid-template-rows: 1fr .5fr .5fr 5fr 5fr;
   grid-template-areas:
@@ -19,6 +19,7 @@ body {
   "nav"
   "subtitle"
   "main"
+  "submain"
   ;
 }
 
@@ -82,7 +83,6 @@ td {
   color: #fcf400;
   width: 50%;
   height: 6vmin;
-  margin: 5vmin;
   border: solid .5vmin #fcf400;
 }
 
@@ -99,9 +99,7 @@ font-size: 4.5vmin;
 color: #fcf400;
 width: 60%;
 height: 6vmin;
-margin: 5vmin;
 border: solid .5vmin #fcf400;
-margin: 0 auto;
 }
 
 #scorecard-partials > table{
@@ -117,4 +115,21 @@ margin: 0 auto;
 
 #user-scorecard {
   width: 100%;
+}
+
+#history-stats {
+  grid-area: submain;
+  font-size: 4.5vmin;
+  color: #fcf400;
+  height: 5vmin;
+}
+
+#scorecard-new::-webkit-outer-spin-button,
+#scorecard-new::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#scorecard-new {
+  -moz-appearance: textfield;
 }
