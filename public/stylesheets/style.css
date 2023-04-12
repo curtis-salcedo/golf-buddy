@@ -60,7 +60,7 @@ th {
   justify-content: center;
   align-items: center;
   border: solid .5vmin black;
-  font-size: 3.5vmin;
+  font-size: 3vmin;
 }
 td {
   color: orange;
@@ -68,7 +68,7 @@ td {
   align-items: center;
   text-align: center;
   border: solid .5vmin black;
-  font-size: 3.25vmin;
+  font-size: 3vmin;
 }
 
 #course-show {

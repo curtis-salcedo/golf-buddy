@@ -2,12 +2,6 @@
 
 <form id="addTime" action="/times/<%= time._id %>?_method=PUT" method="POST">
 
-  Time:<%= time._id %>
-  <br>
-  Course:<%= course._id %>
-  <br>
-  Date: <%= time.date %>
-  <br> <%= users.name %>
 <h3>
   <label>Course:</label> <%= course.courseName %>
 <br>
@@ -19,20 +13,12 @@
   <input name="time" type="time" min="06:00" max="15:00" value="<%= time.time %>">
 </label>
 <br>
-<label>Number of Players: 
-  <select name="groupSize" default="<%= time.groupSize %>">
-    <option value="4"<%= time.groupSize === 4 ? 'selected' : '' %>>4</option>
-    <option value="3"<%= time.groupSize === 3 ? 'selected' : '' %>>3</option>
-    <option value="2"<%= time.groupSize === 2 ? 'selected' : '' %>>2</option>
-    <option value="1"<%= time.groupSize === 1 ? 'selected' : '' %>>1</option>
-  </select>
-</label>
+<label>Playing Partners</label>
+  <!-- ADD PLAYING PARTNERS FOR USER ACCESS -->
+
 <br>
-<label>Playing Partners
-  </label>
-  <br>
-  <button type="submit" href="<%= time.id %>"">Submit Changes
-  </button>
+<button type="submit" href="<%= time.id %>"">Submit Changes
+</button>
 </h3>
 
 <%- include('../partials/footer') %>

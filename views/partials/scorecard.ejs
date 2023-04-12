@@ -8,27 +8,23 @@
       Course Name
     </td>
     <td>
-      Date
-    </td>
-    <td>
-      Tee Time
-    </td>
-    <td>
-      Group Size
+      <%= course.courseName %>
     </td>
   </tr>
   <tr>
     <td>
-      <%= course.courseName %>
+      Date
     </td>
     <td>
-      <%= time.date %>
+      <%= time.date.toDateString() %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Tee Time
     </td>
     <td>
       <%= time.time %>
-    </td>
-    <td>
-      <%= time.groupSize %>
     </td>
   </tr>
 </table>

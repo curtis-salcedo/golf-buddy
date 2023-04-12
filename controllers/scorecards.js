@@ -23,10 +23,11 @@ async function create(req, res) {
 }
 
 async function newScorecard(req, res) {
+  const scores = await Scorecard.find({})
   const time = await Time.findById(req.params.id)
   const course = await Course.findById(time.course)
   const users = await User.find({})
-  res.render('scorecards/new', {time, course, users})
+  res.render('scorecards/new', {time, course, users, scores})
 }
 
 async function show(req, res) {

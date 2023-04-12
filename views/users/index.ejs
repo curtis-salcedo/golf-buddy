@@ -14,7 +14,7 @@
     <% scores.forEach(function(u){ %>
       <tr>
         <td>
-          <%= u.time.date %>
+          <%= u.time.date.toDateString() %>
         </td>
         <td>
           <%= u.courseId.courseName %>

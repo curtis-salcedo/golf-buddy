@@ -13,7 +13,6 @@ module.exports = {
 async function history(req, res) {
   const courseId = req.params.id
   const times = await Time.find({course: courseId}).populate('course','courseName')
-  console.log(times)
   res.render(`courses/history`, {times, courseId})
 }
 

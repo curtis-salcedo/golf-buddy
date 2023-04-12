@@ -42,10 +42,14 @@ Scorecard Info
         <input name="user" hidden value="<%= user._id %>"><%= user.name %>
       </td>
         <td>
-          <input name="score.one" type="number">
+          <select name="score.one">
+            <% console.log('placeholder') %>
+            <options></options>
+          </select>
+          <!-- <input name="score.one" type="number" > -->
         </td>
         <td>
-          <input name="score.two" type="number">
+          <input name="score.two" type="number" >
         </td>
         <td>
           <input name="score.three" type="number">

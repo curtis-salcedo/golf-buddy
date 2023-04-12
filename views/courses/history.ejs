@@ -1,15 +1,48 @@
 <%- include('../partials/header') %>
 
 <h3>
-  <%= `You are viewing all the previous tee times at ${times[0].course.courseName}` %>
+  <%= `You are viewing all your previous tee times at ${times[0].course.courseName}. To view your scorecard click on "View Scorecard."` %>
 </h3>
-<p>
-  <% times.forEach(function(t) { %>
-    <%= t.date %>
-    <%= t.times %>
-    <a href="/times/<%= t._id %>/scorecards">Details</a>
-    <br>
-    <% }) %>
-</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>
+        Course
+      </th>
+      <th>
+        Date
+      </th>
+      <th>
+        Score
+      </th>
+      <th>
+        
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% times.forEach(function(t) { %>
+      <% const now = new Date() %>
+      <% const timeCheck = new Date(t.date) %>
+      <% if (timeCheck < now) { %>
+      <tr>
+        <td>
+          <%= t.course.courseName %>
+        </td>
+        <td>
+          <%= t.date.toDateString() %>
+        </td>
+        <td>
+          <%= t.times %>
+        </td>
+        <td>
+          <a href="/times/<%= t._id %>/scorecards">Details</a>
+        </td>
+        </tr>
+        <% } %>
+      <% }) %>
+  </tbody>
+</table>
 
 <%- include('../partials/footer') %>
