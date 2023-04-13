@@ -11,7 +11,7 @@
     </tr>
   </thead>
   <tbody>
-    <% let summary = 0 %>
+    <% let sum = 0 %>
     <% scores.forEach(function(u){ %>
       <tr>
         <td>
@@ -27,7 +27,7 @@
           <% let scoreTotal = Object.values(u.score) %>
           <% let reduce = scoreTotal.reduce((acc, x) => acc + x, 0); %>
           <%= reduce %>
-          <% summary += reduce %>
+          <% sum += reduce %>
         </td>
         <% }) %>
       </tr>
@@ -35,7 +35,7 @@
   </table>
   
 <section id="history-stats">
-  Average Strokes: <%let average = (summary / scores.length) %>
+  Average Strokes: <%let average = (sum / scores.length) %>
   <%= average.toFixed(1) %>
 </section>
 

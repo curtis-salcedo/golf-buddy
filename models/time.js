@@ -8,6 +8,10 @@ const timeSchema = new Schema({
     scorecards: {
       type: Schema.Types.ObjectId,
       ref: 'Scorecard'
+    },
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
     }
 }, {
   timestamps: true

@@ -1,37 +1,56 @@
 <%- include('../partials/header') %>
+<h2>Add a Tee Time</h2>
+<section>
+<form action="/times" method="POST">
+<table id="teetime-new">
+  <tbody>
 
-<form id="addTime" action="/times" method="POST">
+    <tr>
+      <td>
+        <label>Course</label>
+      </td>
+      <td>
+        <select name="course">
+          <% course.forEach(function(c) { %>
+            <option value="<%= c._id %>">
+              <%= c.courseName %>
+            </option>
+          <% }) %>
+        </select>
+      </td>
+    </tr>
 
-<label>Date
-  <input name="date" type="date" value="date">
-</label>
-<br>
-<label>Tee Time
-  <input name="time" type="time" value="date.toDateString" min="06:00" max="15:00">
-</label>
-<br>
-<label>Number of Players
+    <tr>
+      <td>
+        <label>Date</label>
+      </td>
+      <td>
+        <input name="date" type="date" value="date">
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label>Time</label>
+      </td>
+      <td>
+        <input name="time" type="time" value="date.toDateString" min="06:00" max="15:00">
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+  <button id="teetime-button" type="submit">Submit</button>
+</form>
+</section>
+
+<!-- <label>Number of Players
 </label>
   <select name="groupSize">
     <option>4</option>
     <option>3</option>
     <option>2</option>
     <option>1</option>
-  </select>
-<br>
-<label>Course
-  <select name="course">
-    <% course.forEach(function(c) { %>
-      <option value="<%= c._id %>">
-        <%= c.courseName %>
-      </option>
-    <% }) %>
-  </select>
-</label>
-<br>
-<button type="submit">Submit</button>
-
-
-</form>
-
+  </select> -->
+<!-- <br> -->
 <%- include('../partials/footer') %>

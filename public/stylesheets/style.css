@@ -73,6 +73,10 @@ td {
   font-size: 3vmin;
 }
 
+button, select, input {
+  cursor: pointer;
+}
+
 #course-show {
   display: flex;
   justify-content: center;
@@ -123,4 +127,26 @@ border: solid .5vmin #fcf400;
   font-size: 4.5vmin;
   color: #fcf400;
   height: 5vmin;
+}
+
+#teetime-new td {
+  font-size: 5vmin;
+  color: #fcf400;
+  margin: 0 auto;
+}
+
+#teetime-new table {
+  font-size: 5vmin;
+  background-color: red;
+}
+
+section {
+  text-align: center;
+}
+
+#teetime-button, #add-tee-time {
+  width: 25%;
+  height: 6vmin;
+  margin: 0 auto;
+  text-align: center;
 }

@@ -9,10 +9,10 @@
       <th>Course</th>
       <th>Date</th>
       <th>Time</th>
-
+      <th>Created By</th>
     </tr>
   </thead>
-  <tbody>    
+  <tbody>
     <% times.forEach(function(t) { %>
       <% const now = new Date() - 1 %>
       <% const timeCheck = new Date(t.date) %>
@@ -21,16 +21,17 @@
           <td><%= t.course.courseName %></td>
           <td><%= t.date.toDateString() %></td>
           <td><%= t.time %></td>
+          <td><%= t.user.name %></td>
           <td><a href="/times/<%= t._id %>">Details</a></td>
         </tr>
         <% } %>
         <% }); %>
     </tbody>
   </table>
+  
+  <form  method="GET" action="/times/new">
+    <button id="add-tee-time" type="submit">NEW TIME</button>
+  </form>
 </section>
-
-<form id="add-tee-time" method="GET" action="/times/new">
-  <button type="submit">ADD TEE TIME</button>
-</form>
 
 <%- include('../partials/footer') %>

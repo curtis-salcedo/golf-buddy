@@ -8,6 +8,8 @@ module.exports = {
   show,
   create,
   new: newScorecard,
+  index,
+  edit
 }
 
 // async function create(req, res) {
@@ -23,14 +25,19 @@ module.exports = {
 //   }
 // }
 
+async function index (req, res) {
+  render(`scorecards/${req.params.id}/index`)
+}
 
+async function edit (req, res) {
+  render(`scorecards/${req.params.id}/edit`)
+}
 
 async function create(req, res) {
   try {
     const scorecard = await Scorecard.create(req.body)
     await scorecard.save()
     const time = await Time.findById(scorecard.time._id)
-    console.log(scorecard._id)
     time.scorecards = scorecard._id
     await time.save()
   } catch (err) {

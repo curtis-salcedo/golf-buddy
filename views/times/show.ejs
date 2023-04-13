@@ -2,27 +2,77 @@
 
 <h2>Scorecard</h2>
 
-
 <section id="times-show">
-  <div>
-    <%- include('../partials/scorecard') %>
-  </div>
-  <form action="/times/<%= time._id %>/show" method="GET">
-    <% if (typeof time.scorecards === 'object') { %>
-    <button type="submit">VIEW SCORECARD</button>
-    <% } %>
-    </form>
+
+  <% let totalYardage; %>
+  <% let totalPar; %>
+  <section id="scorecard-partials">
+  
+  <table>
+    <tr>
+      <td>Course Name</td>
+      <td><%= course.courseName %></td>
+    </tr>
+    <tr>
+      <td>Date</td>
+      <td><%= time.date.toDateString() %></td>
+    </tr>
+    <tr>
+      <td>Tee Time</td>
+      <td><%= time.time %></td>
+    </tr>
+    <tr>
+      <td>Created By</td>
+      <td><%= time.user.name %></td>
+    </tr>
+  </table>
+  
+  <br>
+  
+  <table>
+    <thead>
+      <tr>
+        <td>Hole</td>
+          <% course.courseScorecard.forEach(function(s) { %>
+            <td><%= s.hole %></td>
+          <% }) %>
+        </tr>
+        <tr>
+          <td>yardage</td>
+          <% course.courseScorecard.forEach(function(s) { %>
+              <% totalYardage + s.yardage %>
+              <td><%= s.yardage %></td>
+            <% }) %>
+          </tr>
+        <tr>
+          <td>par</td>
+          <% course.courseScorecard.forEach(function(s) { %>
+              <% totalPar + s.par %>
+              <td><%= s.par %></td>
+            <% }) %>
+      </thead>
+    </table>
+  </section>
+<br>
   <form action="/times/<%= time._id %>/scorecards">
-    <% if (typeof time.scorecards !== 'object') { %>
-    <button type="submit">NEW SCORECARD</button>
+    <% if (time.user.id === user.id && !time.scorecards) { %>
+      <button type="submit">NEW SCORECARD</button>
     <% } %>
   </form>
+  <br>
+  <form action="/times/<%= time._id %>/scorecards" method="GET">
+      <button type="submit">VIEW SCORECARD</button>
+  </form>
+  <br>
+
   <form action="/times/edit/<%= time._id %>/?_method=EDIT" method="PUT">
     <button type="submit">EDIT TEE TIME</button>
   </form>
+  <br>
   <form action="/times/delete/<%= time._id %>/?_method=DELETE" method="POST">
     <button type="submit">DELETE SCORECARD</button>
   </form>
+
 </section>
 
 <%- include('../partials/footer') %>

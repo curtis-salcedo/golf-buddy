@@ -2,6 +2,7 @@ const Time = require('../models/time');
 const Course = require('../models/course');
 const User = require('../models/user');
 const Scorecard = require('../models/scorecard');
+const user = require('../models/user');
 
 module.exports = {
   index,
@@ -50,14 +51,18 @@ async function deleteTime(req, res) {
 }
 
 async function index(req, res) {
+  const userId = req.user._id
   const times = await Time.find({})
   .populate('course')
+  .populate('user')
   .sort('date')
-  res.render('times/index', { times })
+  res.render('times/index', { times, userId })
 }
 
 async function show(req, res) {
   const time = await Time.findById(req.params.id)
+  .populate('scorecards')
+  .populate('user')
   const course = await Course.findById(time.course)
   res.render(`times/show`, {time, course})
 }
@@ -77,7 +82,8 @@ async function create(req, res) {
         date: req.body.date,
         time: req.body.time,
         groupSize: req.body.groupSize,
-        course: req.body.course
+        course: req.body.course,
+        user: req.user._id
     })
     await time.save();
     res.redirect(`/times`)
