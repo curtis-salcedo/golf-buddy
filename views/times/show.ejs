@@ -7,8 +7,15 @@
   <div>
     <%- include('../partials/scorecard') %>
   </div>
+  <form action="/times/<%= time._id %>/show" method="GET">
+    <% if (typeof time.scorecards === 'object') { %>
+    <button type="submit">VIEW SCORECARD</button>
+    <% } %>
+    </form>
   <form action="/times/<%= time._id %>/scorecards">
-    <button type="submit">SHOW SCORECARD</button>
+    <% if (typeof time.scorecards !== 'object') { %>
+    <button type="submit">NEW SCORECARD</button>
+    <% } %>
   </form>
   <form action="/times/edit/<%= time._id %>/?_method=EDIT" method="PUT">
     <button type="submit">EDIT TEE TIME</button>

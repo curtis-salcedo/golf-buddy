@@ -2,23 +2,39 @@ const User = require('../models/user')
 const Time = require('../models/time');
 const Course = require('../models/course');
 const Scorecard = require('../models/scorecard');
+const { render } = require('ejs');
 
 module.exports = {
   show,
   create,
-  new: newScorecard
+  new: newScorecard,
 }
+
+// async function create(req, res) {
+//   try {
+//     const scorecard = await Scorecard.create(
+//       req.body
+//     )
+//       await scorecard.save()
+//       res.redirect(`/times`)
+//   } catch (err) {
+//     console.log("scorecard create error: " + err)
+//     res.redirect('/times')
+//   }
+// }
+
+
 
 async function create(req, res) {
   try {
-    const scorecard = await Scorecard.create(
-      req.body
-    )
-      await scorecard.save()
-      res.redirect(`/times`)
+    const scorecard = await Scorecard.create(req.body)
+    await scorecard.save()
+    const time = await Time.findById(scorecard.time._id)
+    console.log(scorecard._id)
+    time.scorecards = scorecard._id
+    await time.save()
   } catch (err) {
-    console.log("scorecard create error: " + err)
-    res.redirect('/times')
+    console.log('there is an error at controllers/scorecard/create')
   }
 }
 
@@ -31,5 +47,5 @@ async function newScorecard(req, res) {
 }
 
 async function show(req, res) {
-
+  render('scorecards/show')
 }

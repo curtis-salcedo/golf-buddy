@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<h2>ALL TEE TIMES</h2>
+<h2>TEE TIMES SCHEDULED</h2>
 
 <section id="time-index">
   <table id="time-table">
@@ -9,20 +9,19 @@
       <th>Course</th>
       <th>Date</th>
       <th>Time</th>
-      <th></th>
+
     </tr>
   </thead>
-  <tbody>
-    
+  <tbody>    
     <% times.forEach(function(t) { %>
-      <% const now = new Date() %>
+      <% const now = new Date() - 1 %>
       <% const timeCheck = new Date(t.date) %>
       <% if (timeCheck > now) { %>
         <tr>
-        <td><%= t.course.courseName %></td>
+          <td><%= t.course.courseName %></td>
           <td><%= t.date.toDateString() %></td>
           <td><%= t.time %></td>
-          <td><a href="/times/<%= t._id %>">DETAILS</a></td>
+          <td><a href="/times/<%= t._id %>">Details</a></td>
         </tr>
         <% } %>
         <% }); %>

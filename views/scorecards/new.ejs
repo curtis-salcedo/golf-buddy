@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-Scorecard Info
+<h2>Scorecard Info</h2>
 <section id="user-scorecard">
 <h3>
   <%= `You are viewing the tee time for ${course.courseName} on ${time.date.toDateString()} at ${time.time} with ${time.groupSize} players` %>
@@ -42,35 +42,31 @@ Scorecard Info
         <input name="user" hidden value="<%= user._id %>"><%= user.name %>
       </td>
         <td>
-          <!-- <select name="score.one">
-            <% console.log('placeholder') %>
-            <options></options>
-          </select> -->
-          <input name="score.one" type="number" class="total" onchange="count()">
+          <input name="score.one" type="number" class="total" onchange="count()" min="0" max="10">
         </td>
         <td>
-          <input name="score.two" type="number" class="total" onchange="count()">
+          <input name="score.two" type="number" class="total" onchange="count()" min="0" max="10">
         </td>
         <td>
-          <input name="score.three" type="number" class="total" onchange="count()">
+          <input name="score.three" type="number" class="total" onchange="count()" min="0" max="10">
         </td>
         <td>
-          <input name="score.four" type="number" class="total" onchange="count()">
+          <input name="score.four" type="number" class="total" onchange="count()" min="0" max="10">
         </td>
         <td>
-          <input name="score.five" type="number" class="total" onchange="count()">
+          <input name="score.five" type="number" class="total" onchange="count()" min="0" max="10">
         </td>
         <td>
-          <input name="score.six" type="number" class="total" onchange="count()">
+          <input name="score.six" type="number" class="total" onchange="count()" min="0" max="10">
         </td>
         <td>
-          <input name="score.seven" type="number" class="total" onchange="count()">
+          <input name="score.seven" type="number" class="total" onchange="count()" min="0" max="10">
         </td>
         <td>
-          <input name="score.eight" type="number" class="total" onchange="count()">
+          <input name="score.eight" type="number" class="total" onchange="count()" min="0" max="10">
         </td>
         <td>
-          <input name="score.nine" type="number" class="total" onchange="count()">
+          <input name="score.nine" type="number" class="total" onchange="count()" min="0" max="10">
         </td>
         <td>
           <div  id="countTotal">
@@ -84,7 +80,6 @@ Scorecard Info
 </table>
 <button type="submit">Submit Scorecard</button>
 <input type="hidden" name="courseId" value="<%= course._id %>" hidden>
-<% console.log(time.id) %>
 <input type="hidden" name="time" value="<%= time.id %>" hidden>
 </form>
 </section>

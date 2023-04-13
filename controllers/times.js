@@ -1,6 +1,7 @@
 const Time = require('../models/time');
 const Course = require('../models/course');
 const User = require('../models/user');
+const Scorecard = require('../models/scorecard');
 
 module.exports = {
   index,

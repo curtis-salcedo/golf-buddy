@@ -54,6 +54,7 @@ table {
   grid-area: main;
   justify-self: center;
   width: 80%;
+  margin: auto;
 }
 
 th {
