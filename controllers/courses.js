@@ -12,7 +12,9 @@ module.exports = {
 
 async function history(req, res) {
   const courseId = req.params.id
-  const times = await Time.find({course: courseId}).populate('course','courseName')
+  const times = await Time.find({course: courseId})
+  .populate('course')
+  .populate('scorecards')
   res.render(`courses/history`, {times, courseId})
 }
 

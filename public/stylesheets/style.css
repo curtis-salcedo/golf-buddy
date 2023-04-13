@@ -150,3 +150,7 @@ section {
   margin: 0 auto;
   text-align: center;
 }
+
+#user-scorecard input{
+color: white;
+}

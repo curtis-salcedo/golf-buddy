@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <h3>
-  <%= `You are viewing all your previous tee times at ${times[0].course.courseName}. To view your scorecard click on "View Scorecard."` %>
+  <%= `You are viewing all your previous tee times at ${times[0].course.courseName}.` %>
 </h3>
 
 <table>
@@ -22,10 +22,11 @@
     </tr>
   </thead>
   <tbody>
+    <% let sum = 0%>
     <% times.forEach(function(t) { %>
       <% const now = new Date() %>
       <% const timeCheck = new Date(t.date) %>
-      <% if (timeCheck < now) { %>
+      <% if (timeCheck > now) { %>
       <tr>
         <td>
           <%= t.course.courseName %>
@@ -34,7 +35,12 @@
           <%= t.date.toDateString() %>
         </td>
         <td>
-          <%= t.times %>
+          <% if(typeof t.scorecards === 'object') { %>
+            <% let scoreTotal = Object.values(t.scorecards.score) %>
+            <% let reduce = scoreTotal.reduce((acc, x) => acc + x, 0); %>
+            <%= reduce %>
+            <% sum += reduce %>
+          <% } %>
         </td>
         <td>
           <a href="/times/<%= t._id %>/scorecards">Details</a>

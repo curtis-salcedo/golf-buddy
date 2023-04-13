@@ -11,13 +11,13 @@ Course Location: <%= course.courseLocation %>
 </h2>
 
 <!-- BUTTON TO GET TO SCORECARD FOR COURSE BY ID -->
-<label>
+<section>
 <form id="course-show" method="GET" action="/courses/<%= course._id %>/scorecard">
   <button type="submit">Show Scorecard</button>
 </form>
-
+<br>
 <form id="course-show" method="GET" action="/courses/<%= course._id %>/history">
   <button type="submit">Show History</button>
 </form>
-</label>
+</section>
 <%- include('../partials/footer') %>

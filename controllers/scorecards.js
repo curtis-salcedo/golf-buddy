@@ -40,6 +40,7 @@ async function create(req, res) {
     const time = await Time.findById(scorecard.time._id)
     time.scorecards = scorecard._id
     await time.save()
+    res.redirect('/times')
   } catch (err) {
     console.log('there is an error at controllers/scorecard/create')
   }
