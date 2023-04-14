@@ -21,7 +21,7 @@
 </div>
 
 ## DESCRIPTION
-Golf Buddy is a golf score tracker that will keep record of your rounds, scores, courses and history. You can use it to track scores as you play or enter at the end of the round so you don't have to hold onto paper scorecards any longer.
+Golf Buddy is a golf group score tracker that will keep record of your rounds, scores, courses and history. You can use it to track scores as you play or enter at the end of the round so you don't have to hold onto paper scorecards any longer.
 
 ## TECHNOLGIES USED
 * NODE.js
@@ -42,6 +42,7 @@ Golf Buddy is a golf score tracker that will keep record of your rounds, scores,
 * ADDING EDIT SCORECARD
 * ADDING ROUND BY ROUND STATISTICS
 * ADDING WEATHER API TO SEE FORCAST
+* ADDING LEADERBOARD AND STANDINGS PAGE
 * ADDING HANDICAP ESTIMATE AS ROUND PROGRESSES
 * ADDING HANDICAP SCOREKEEPING ON EACH HOLE
 * TRACKING SHOT BY SHOT WITH WHAT CLUB FOR PERFORMANCE PROGRESS
