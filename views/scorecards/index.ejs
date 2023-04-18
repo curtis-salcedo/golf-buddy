@@ -1,3 +1,71 @@
 <%- include('../partials/header') %>
-view page
-<%- include('../partials/footer') %>
+<% let totalYardage = 0; %>
+<% let totalPar = 0; %>
+<section id="scorecard-table">
+<table>
+  <thead>
+    <tr>
+      <td>hole</td>
+        <% course.courseScorecard.forEach(function(s) { %>
+          <td><%= s.hole %></td>
+        <% }) %>
+        <td>Totals</td>
+    </tr>
+    <tr>
+      <td>yardage</td>
+        <% course.courseScorecard.forEach(function(s) { %>
+            <% totalYardage += s.yardage %>
+            <td><%= s.yardage %></td>
+          <% }) %>
+        <td><%= totalYardage %></td>
+        </tr>
+    <tr>
+      <td>par</td>
+        <% course.courseScorecard.forEach(function(s) { %>
+            <% totalPar += s.par %>
+            <td><%= s.par %></td>
+          <% }) %>
+        <td><%= totalPar %></td>
+    </tr>
+    <!-- PLAYERS ON CARD FOR VIEWING ONLY -->
+    <tr>
+      <td><%= user.name %></td>
+        <td>
+          <button onclick="loadData()">
+            <%= scorecard.score.one %>
+          </button>
+        </td>
+        <td>
+          <%= scorecard.score.two %>
+        </td>
+        <td>
+          <%= scorecard.score.three %>
+        </td>
+        <td>
+          <%= scorecard.score.four %>
+        </td>
+        <td>
+          <%= scorecard.score.five %>
+        </td>
+        <td>
+          <%= scorecard.score.six %>
+        </td>
+        <td>
+          <%= scorecard.score.seven %>
+        </td>
+        <td>
+          <%= scorecard.score.eight %>
+        </td>
+        <td>
+          <%= scorecard.score.nine %>
+        </td>
+        <td>
+
+        </td>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</section> 
+  <%- include('../partials/footer') %>

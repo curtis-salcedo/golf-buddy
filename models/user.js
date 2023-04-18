@@ -12,6 +12,10 @@ const userSchema = new Schema({
   teeTimes: {
     type: Schema.Types.ObjectId,
     ref: 'time'
+  },
+  bag: {
+    clubs: String,
+    ball: String
   }
 }, {
   timestamps: true

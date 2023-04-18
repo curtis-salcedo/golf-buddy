@@ -1,6 +1,7 @@
 <%- include('../partials/header') %>
 
 <h2>My Buddy</h2>
+<a href="/users/<%= user.id %>/">Edit Bag</a>
 <table>
   <thead>
     <tr>
@@ -13,6 +14,7 @@
   <tbody>
     <% let sum = 0 %>
     <% scores.forEach(function(u){ %>
+      <% console.log(u.time) %>
       <tr>
         <td>
           <%= u.time.date.toDateString() %>
@@ -34,10 +36,10 @@
     </tbody>
   </table>
   
-<section id="history-stats">
-  Average Strokes: <%let average = (sum / scores.length) %>
-  <%= average.toFixed(1) %>
-</section>
+  <section id="history-stats">
+    Average Strokes: <%let average = (sum / scores.length) %>
+    <%= average.toFixed(1) %>
+  </section>
 
 
 <%- include('../partials/footer') %>

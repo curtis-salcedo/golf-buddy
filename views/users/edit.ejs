@@ -1,0 +1,61 @@
+<%- include('../partials/header') %>
+
+<h2>My Bag</h2>
+<h3>Select Your Ball</h3>
+<select name="ball" id="ball-select" value="text">
+  <option>Titlest ProV1</option>
+  <option>Titlest ProV1x</option>
+</select>
+
+<section>
+  <h3>Select Your Clubs</h3>
+  <table class="club table">
+    <form name="bag" action="users/<%= user.id %>/update?_method=UPDATE" method="PUT">
+      <button type="submit">Submit Bag</button>
+    <tr>
+      <td>Putter</td>
+      <td>Driver</td>
+    </tr>
+    <tr>
+      <td>Wedges</td>
+      <td>60</td>
+      <td>58</td>
+      <td>56</td>
+      <td>54</td>
+      <td>52</td>
+      <td>50</td>
+      <td>48</td>
+      <td>PW</td>
+      <td>SW</td>
+    </tr>
+    <tr>
+      <td>Irons</td>
+      <td>9 Iron</td>
+      <td>8 Iron</td>
+      <td>7 Iron</td>
+      <td>6 Iron</td>
+      <td>5 Iron</td>
+      <td>4 Iron</td>
+      <td>3 Iron</td>
+      <td>2 Iron</td>
+    </tr>
+    <tr>
+      <td>Hybrids</td>
+      <td>5H</td>
+      <td>4H</td>
+      <td>3H</td>
+      <td>2H</td>
+    </tr>
+    <tr>
+      <td>Woods</td>
+      <td>5W</td>
+      <td>4W</td>
+      <td>3W</td>
+      <td>2W</td>
+    </tr>
+  </form>
+  </table>
+</section>
+
+
+<%- include('../partials/footer') %>

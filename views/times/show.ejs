@@ -55,13 +55,18 @@
   </section>
 <br>
   <form action="/times/<%= time._id %>/scorecards">
-    <% if (time.user.id === user.id && !time.scorecards) { %>
       <button type="submit">NEW SCORECARD</button>
-    <% } %>
   </form>
   <br>
-  <form action="/times/<%= time._id %>/scorecards" method="GET">
+  <% if (time.scorecards) { %>
+  <form action="/scorecards/<%= time.scorecards._id %>/index">
       <button type="submit">VIEW SCORECARD</button>
+  </form>
+  <% } %>
+  <br>
+
+  <form action="/scorecards/<%= time._id %>/show">
+      <button type="submit">INTERACTIVE</button>
   </form>
   <br>
 

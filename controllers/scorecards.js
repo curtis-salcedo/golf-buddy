@@ -12,25 +12,16 @@ module.exports = {
   edit
 }
 
-// async function create(req, res) {
-//   try {
-//     const scorecard = await Scorecard.create(
-//       req.body
-//     )
-//       await scorecard.save()
-//       res.redirect(`/times`)
-//   } catch (err) {
-//     console.log("scorecard create error: " + err)
-//     res.redirect('/times')
-//   }
-// }
 
 async function index (req, res) {
-  render(`scorecards/${req.params.id}/index`)
+  let scorecard = await Scorecard.findById(req.params.id)
+  .populate('courseId')
+  const course = await Course.findById(scorecard.courseId)
+  res.render(`scorecards/index`, {scorecard, course})
 }
 
 async function edit (req, res) {
-  render(`scorecards/${req.params.id}/edit`)
+  res.render(`scorecards/${req.params.id}/edit`)
 }
 
 async function create(req, res) {
@@ -55,5 +46,10 @@ async function newScorecard(req, res) {
 }
 
 async function show(req, res) {
-  render('scorecards/show')
+  let scorecard = await Scorecard.findById(req.params.id)
+  .populate('courseId')
+  .populate('time')
+  let course = await Course.find({})
+  let time = await Time.find({})
+  res.render('scorecards/show',{scorecard, course, time})
 }

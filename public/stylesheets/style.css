@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  background-color: #006747;
+  background-color: #e4e4e4;
 }
 
 nav > a{
@@ -9,7 +9,7 @@ nav > a{
 }
 
 body {
-  color: #fcf400;
+  color: #000080;
   height: 100vh;
   margin: 0 auto;
   display: grid;
@@ -58,18 +58,18 @@ table {
 }
 
 th {
-  color: orange;
+  color: #000080;
   justify-content: center;
   align-items: center;
-  border: solid .5vmin black;
+  border: solid .25vmin black;
   font-size: 3vmin;
 }
 td {
-  color: orange;
+  color: #000080;
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: solid .5vmin black;
+  border: solid .25vmin black;
   font-size: 3vmin;
 }
 
@@ -85,10 +85,10 @@ button, select, input {
 
 #course-show > button {
   font-size: 4.5vmin;
-  color: #fcf400;
+  color: #000080;
   width: 50%;
   height: 6vmin;
-  border: solid .5vmin #fcf400;
+  border: solid .5vmin #000080;
 }
 
 #times-show {
@@ -101,10 +101,10 @@ button, select, input {
 
 #times-show > form > button {
 font-size: 4.5vmin;
-color: #fcf400;
+color: #000080;
 width: 60%;
 height: 6vmin;
-border: solid .5vmin #fcf400;
+border: solid .5vmin #000080;
 }
 
 #scorecard-partials > table{
@@ -125,13 +125,13 @@ border: solid .5vmin #fcf400;
 #history-stats {
   grid-area: submain;
   font-size: 4.5vmin;
-  color: #fcf400;
+  color: #000080;
   height: 5vmin;
 }
 
 #teetime-new td {
   font-size: 5vmin;
-  color: #fcf400;
+  color: #000080;
   margin: 0 auto;
 }
 
@@ -154,3 +154,21 @@ section {
 #user-scorecard input{
 color: white;
 }
+
+.clubs-parent {
+  grid-area: submain;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr, 1fr, 2fr, 2fr, 2fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  }
+
+.clubs {
+  display: grid;
+  grid-row: span 4;
+  grid-column: span 2;
+  grid-template-columns: repeat(2, .1fr);
+  grid-template-rows: repeat(7, .1fr)
+}
+

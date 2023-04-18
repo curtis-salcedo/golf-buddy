@@ -9,3 +9,7 @@ function count() {
   console.log(sum)
   document.getElementById('countTotal').innerHTML = sum;
 }
+
+function loadData() {
+  
+}
