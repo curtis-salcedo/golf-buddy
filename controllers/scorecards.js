@@ -2,7 +2,6 @@ const User = require('../models/user')
 const Time = require('../models/time');
 const Course = require('../models/course');
 const Scorecard = require('../models/scorecard');
-const { render } = require('ejs');
 
 module.exports = {
   show,
@@ -46,10 +45,8 @@ async function newScorecard(req, res) {
 }
 
 async function show(req, res) {
-  let scorecard = await Scorecard.findById(req.params.id)
-  .populate('courseId')
-  .populate('time')
-  let course = await Course.find({})
-  let time = await Time.find({})
-  res.render('scorecards/show',{scorecard, course, time})
+  let time = await Time.findById(req.params.id)
+  .populate('course')
+  let course = time.course
+  res.render('scorecards/show', {time, course})
 }

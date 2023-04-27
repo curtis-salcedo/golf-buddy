@@ -2,71 +2,46 @@
   display: grid;
   grid-area: main;
   background-color: blue;
-  width: 90%;
+  width: 750px;
   margin: 0 auto;
   border-radius: 2vmin;
-  grid-template-columns: repeat(3, 15% 70% 15%);
-  grid-template-rows: (2, 10% 90%);
+  grid-template-columns: repeat(2, 80% 20%);
+  grid-template-rows: (5, 10% 90%);
+}
+
+#scorecard-score {
+
 }
 
 #scorecard-next {
-  background-color: beige;
-  grid-template-rows: (3, 20% 60% 20%);
+  padding: 1vmin;
 }
-
-#scorecard-next-hole {
-  height: 50%;
-  background-color: aqua;
-}
-
-#scorecard-next-par {
-  height: 25%;
-  background-color: aquamarine;
-}
-
-#scorecard-next-yardage {
-  height: 25%;
-  background-color: azure;
-}
-
-#scorecard-next {
-  background-color: aqua;
-}
-
-#scorecard-previous-hole {
-  height: 50%;
-  background-color: aqua;
-}
-
-#scorecard-previous-par {
-  height: 25%;
-  background-color: aquamarine;
-}
-
-#scorecard-previous-yardage {
-  height: 25%;
-  background-color: azure;
-}
-
 #scorecard-previous {
-  background-color: aqua;
+  padding: 1vmin;
 }
-
-#scorecard-current-hole {
-  height: 50%;
-  background-color: aqua;
-}
-
-#scorecard-current-par {
-  height: 25%;
-  background-color: aquamarine;
-}
-
-#scorecard-current-yardage {
-  height: 25%;
-  background-color: azure;
-}
-
 #scorecard-current {
+  padding: 1vmin;
+}
+
+#scorecard-next-hole, #scorecard-current-hole {
+  height: 60%;
   background-color: aqua;
+  border: black solid .35vmin;
+  border-radius: 2vmin;
+}
+
+#scorecard-next-par, #scorecard-current-par {
+  height: 20%;
+  background-color: aquamarine;
+  border: black solid .35vmin;
+  border-radius: 2vmin;
+  margin-top: 1vmin;
+}
+
+#scorecard-next-yardage, #scorecard-current-yardage {
+  height: 20%;
+  background-color: azure;
+  border: black solid .35vmin;
+  border-radius: 2vmin;
+  margin-top: 1vmin;
 }

@@ -8,10 +8,10 @@
 
 <% let totalYardage = 0; %>
 <% let totalPar = 0; %>
-<table id="scorecard-table">
+<table id="table table-bordered border-primary">
   <thead>
     <tr>
-      <td>hole</td>
+      <td>Hole</td>
         <% course.courseScorecard.forEach(function(s) { %>
           <td><%= s.hole %></td>
         <% }) %>

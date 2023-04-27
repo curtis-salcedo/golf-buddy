@@ -2,22 +2,25 @@
 
 <form id="addTime" action="/times/<%= time._id %>?_method=PUT" method="POST">
 
-<h3>
-  <label>Course:</label> <%= course.courseName %>
-<br>
-  <label>Current Date: <%= time.date.toDateString() %>
-<br>
-</label>
-<br>
-<label>Tee Time: 
-  <input name="time" type="time" min="06:00" max="15:00" value="<%= time.time %>">
-</label>
-<br>
-<label>Playing Partners</label>
-  <!-- ADD PLAYING PARTNERS FOR USER ACCESS -->
+<div class="container">
+
+  <h3>
+    <label>Course:</label> <%= course.courseName %>
+    <br>
+    <label>Current Date: <%= time.date.toDateString() %>
+      <br>
+    </label>
+    <br>
+    <label>Tee Time: 
+      <input name="time" type="time" min="05:00" max="19:00" value="<%= time.time %>">
+    </label>
+    <br>
+    <label>Playing Partners</label>
+    <!-- ADD PLAYING PARTNERS FOR USER ACCESS -->
+  </div>
 
 <br>
-<button type="submit" href="<%= time.id %>"">Submit Changes
+<button type="submit" href="<%= time.id %>">Submit Changes
 </button>
 </h3>
 

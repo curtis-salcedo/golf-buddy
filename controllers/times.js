@@ -11,7 +11,7 @@ module.exports = {
   new: newTime,
   delete: deleteTime,
   edit,
-  update
+  update,
 }
 
 async function update(req, res) {
@@ -86,7 +86,7 @@ async function create(req, res) {
         user: req.user._id
     })
     await time.save();
-    res.redirect(`/times`)
+    res.redirect(`/times/${time._id}/scorecards/`)
   } catch (err) {
     console.log(err)
     res.render('times/new', {errorMsg: err.message})
