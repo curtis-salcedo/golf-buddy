@@ -34,4 +34,28 @@
   </form>
 </div>
 
+<h2 class="display-6 text-center text-start">Previously Played</h2>
+<div class="container">
+  <div class="row justify-content-center">
+    <% times.forEach(function(t, idx) { %>
+      <div class="card width mb-2" style="width:18rem;">
+        <h5 class="card-header"><%= t.course.courseName %></h5>
+        <div class="card-body">
+          <h6 class="card-title"><%= t.date.toDateString() %></h6>
+          <% scorecards.forEach(function(s) { %>
+            <% if (s.scores && s.score.length) { %>
+              <h6 class="card-text"><%= t.scorecards.score %></h6>
+              <% } else { %>
+                <h6 class="card-text">No scores recorded</h6>
+                <% } %>
+          <% }) %>
+          <p class="card-text"></p>
+          <a href="/times/<%= t._id %>" class="btn btn-primary">Details</a>
+          <a href="/times/<%= t._id %>" class="btn btn-danger">Directions</a>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+
 <%- include('../partials/footer') %>

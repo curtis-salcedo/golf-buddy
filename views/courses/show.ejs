@@ -1,23 +1,32 @@
 <%- include('../partials/header') %>
 
-<h2>
-<label name="courseName">
-Course Name: <%= course.courseName %>
-</label>  
-<br>
-<label name="courseLocation">
-Course Location: <%= course.courseLocation %>
-</label>
-</h2>
+<div class="card text-center">
+  <div class="card-body">
+    <h2><%= course.courseName %></h2>
+    <h5><%= course.courseLocation %></h5>
 
-<!-- BUTTON TO GET TO SCORECARD FOR COURSE BY ID -->
-<section>
-<form id="course-show" method="GET" action="/courses/<%= course._id %>/scorecard">
-  <button type="submit">Show Scorecard</button>
-</form>
-<br>
-<form id="course-show" method="GET" action="/courses/<%= course._id %>/history">
-  <button type="submit">Show History</button>
-</form>
-</section>
+    <button type="button" class="btn btn-primary mb-3" data-toggle="collapse" data-target="#scorecardCollapse" aria-expanded="true" aria-controls="scorecardCollapse">
+      Show Scorecard
+    </button>
+    <br>
+    <button type="submit" class="btn btn-secondary mb-3" form="history-form">
+      Show History
+    </button>
+
+    <div id="scorecardCollapse" class="collapse" aria-labelledby="courseHeader" data-parent="#accordion">
+      <form id="course-show" method="GET" action="/courses/<%= course._id %>/scorecard">
+        <!-- ADD YOUR SCORECARD FORMATTING HERE -->
+        <p>faj;lfejlaf</p>
+        <button type="submit" class="btn btn-primary mr-3 mt-3">Show Scorecard</button>
+        <button type="submit" class="btn btn-secondary mt-3" form="history-form">
+          Show History
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<form id="history-form" method="GET" action="/courses/<%= course._id %>/history" style="display:none"></form>
+
+
 <%- include('../partials/footer') %>

@@ -3,34 +3,55 @@
 <h3>
   <%= `You are viewing all your previous tee times at ${times[0].course.courseName}.` %>
 </h3>
+<% if (times > 0) { %>
+<h2>no times to display</h2>
+<% } else { %>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <% let sum = 0 %>
+    <% times.forEach(function(t, idx) { %>
+      <div class="card width mb-2" style="width:18rem;">
+        <h5 class="card-header"><%= t.course.courseName %></h5>
+        <div class="card-body">
+          <h5 class="card-title"><%= t.date.toDateString() %> %></h5>
+          <p class="card-text">
+            <% if(typeof t.scorecards === 'object') { %>
+              <% let scoreTotal = Object.values(t.scorecards.score) %>
+              <% let reduce = scoreTotal.reduce((acc, x) => acc + x, 0); %>
+              Score Recorded: <%= reduce %>
+              <% sum += reduce %>
+            <% } else {%>
+              <p>No score entered</p>
+            <% } %>
+          </p>
+          <a href="/times/<%= t._id %>/scorecards" class="btn btn-primary">Round Details</a>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+
 
 <table>
   <thead>
     <tr>
-      <th>
-        Course
-      </th>
       <th>
         Date
       </th>
       <th>
         Score
       </th>
-      <th>
-        
-      </th>
     </tr>
   </thead>
   <tbody>
-    <% let sum = 0%>
+
     <% times.forEach(function(t) { %>
+      <% console.log(t.course.id)%>
       <% const now = new Date() %>
       <% const timeCheck = new Date(t.date) %>
-      <% if (timeCheck > now) { %>
+      <% if (timeCheck < now) { %>
       <tr>
-        <td>
-          <%= t.course.courseName %>
-        </td>
         <td>
           <%= t.date.toDateString() %>
         </td>
@@ -45,9 +66,10 @@
         <td>
           <a href="/times/<%= t._id %>/scorecards">Details</a>
         </td>
-        </tr>
-        <% } %>
+      </tr>
+      <% } %>
       <% }) %>
+      <% } %>
   </tbody>
 </table>
 

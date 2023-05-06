@@ -83,4 +83,16 @@
 <input type="hidden" name="time" value="<%= time.id %>" hidden>
 </form>
 </section>
+
+<section>
+  <div class="divider"></div>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <%= course.courseScorecard.length %>
+  <a class="btn primary" href="">
+    <%= course.courseScorecard.length %>
+  </a>
+</section>
+
 <%- include('../partials/footer') %>

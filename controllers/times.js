@@ -55,8 +55,22 @@ async function index(req, res) {
   const times = await Time.find({})
   .populate('course')
   .populate('user')
+  .populate({
+    path: 'scorecards',
+    populate: {
+      path: 'score'
+    }
+  })
   .sort('date')
-  res.render('times/index', { times, userId })
+  const scorecards = await Time.find({})
+  .populate({
+    path: 'scorecards',
+    populate: {
+      path: 'score'
+    }
+  })
+  // console.log(scores)
+  res.render('times/index', { times, userId, scorecards })
 }
 
 async function show(req, res) {

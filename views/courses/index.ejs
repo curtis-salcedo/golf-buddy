@@ -1,28 +1,20 @@
 <%- include('../partials/header') %>
 
-<h2>Course Information</h2>
-
-<section id="course-index">
-  <table>
-  <thead>
-    <tr>
-      <th>Course Name</th>
-      <th>Course Location</th>
-      <th>Edit Course Info</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% courses.forEach(function(c) { %>
-      <tr>
-        <td><%= c.courseName %></td>
-        <td><%= c.courseLocation %></td>
-        <td>
-          <a href="/courses/<%= c._id %>">Details</a>
-        </td>
-      </tr>
-    <% }) %>
-  </tbody>
-  </table>
-</section>
+<h2 class="display-5 text-center text-md-start">Courses</h2>
+<div class="container">
+  <div class="row justify-content-center">
+    <% courses.forEach(function(c, idx) { %>
+      <div class="card width mb-2" style="width:18rem;">
+        <h5 class="card-header"><%= c.courseName %></h5>
+        <div class="card-body">
+          <h5 class="card-title"><%= c.courseLocation %></h5>
+          <p class="card-text"></p>
+          <a href="/courses/<%= c._id %>" class="btn btn-primary">Details</a>
+          <a href="/courses/<%= c._id %>" class="btn btn-danger">Directions</a>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
 
 <%- include('../partials/footer') %>
