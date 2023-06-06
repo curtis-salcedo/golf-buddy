@@ -1,10 +1,6 @@
 <%- include('../partials/header') %>
 
-<h2>Scorecard Info</h2>
 <section id="user-scorecard">
-<h3>
-  <%= `You are viewing the tee time for ${course.courseName} on ${time.date.toDateString()} at ${time.time}`%>
-</h3>
 
 <% let totalYardage = 0; %>
 <% let totalPar = 0; %>
@@ -33,7 +29,11 @@
           <% }) %>
         <td><%= totalPar %></td>
     </tr>
-    <!-- PLAYERS ON CARD FOR VIEWING ONLY -->
+
+
+
+
+
   <form id="scorecard-new" action="/scorecards" method="POST">
   </thead>
   <tbody>
@@ -73,8 +73,6 @@
             <input type="hidden" name="totalScore" value="<%= scores.totalScore %>">0
           </div>
         </td>
-
-      </label>
     </tr>
   </tbody>
 </table>

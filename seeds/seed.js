@@ -1,8 +1,8 @@
 require('dotenv').config();
-require('./config/database');
+require('../config/database');
 
-const Course = require('./models/course');
-const data = require('./data');
+const Course = require('../models/course');
+const data = require('./courses-data');
 
 Promise.all([])
 .then(function(results) {

@@ -12,22 +12,29 @@ const scorecardSchema = new Schema({
     ref: 'Course',
     // required: true
   },
-  score: {
-    one: Number,
-    two: Number,
-    three: Number,
-    four: Number,
-    five: Number,
-    six: Number,
-    seven: Number,
-    eight: Number,
-    nine: Number,
-  },
-  time: {
+  score: [{
+    hole: {
+      type: Number,
+      required: true
+    },
+    score: {
+      type: Number,
+      required: true
+    },
+    putts: {
+      type: Number,
+      required: true
+    },
+  }],
+  teeTime: {
     type: Schema.Types.ObjectId,
     ref: 'Time',
-    // required: true
+    required: true
   },
+  shots: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Shot'
+  }],
 }, {
   timestamps: true
 })

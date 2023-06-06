@@ -13,13 +13,16 @@ const userSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'time'
   },
-  bag: {
-    clubs: String,
-    ball: String
-  }
+  equipment: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Club'
+  }],
+  shots: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Shot'
+  }],
 }, {
   timestamps: true
 });
-
 
 module.exports = mongoose.model('User', userSchema);

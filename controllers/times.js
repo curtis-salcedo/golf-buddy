@@ -69,7 +69,6 @@ async function index(req, res) {
       path: 'score'
     }
   })
-  // console.log(scores)
   res.render('times/index', { times, userId, scorecards })
 }
 

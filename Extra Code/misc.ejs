@@ -1,0 +1,89 @@
+<!-- From times/index -->
+<table id="time-table">
+  <thead>
+  <tr>
+    <th>Course</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Created By</th>
+  </tr>
+</thead>
+<tbody>
+  <% times.forEach(function(t) { %>
+    <% const now = new Date() - 1 %>
+    <% const timeCheck = new Date(t.date) %>
+    <% if (timeCheck > now) { %>
+      <tr>
+        <td><%= t.course.courseName %></td>
+        <td><%= t.date.toDateString() %></td>
+        <td><%= t.time %></td>
+        <td><%= t.user.name %></td>
+        <td><a href="/times/<%= t._id %>">Details</a></td>
+      </tr>
+      <% } %>
+      <% }); %>
+  </tbody>
+</table>
+
+<!-- From NEW Scorecard -->
+<% let totalYardage = 0; %>
+<% let totalPar = 0; %>
+<table id="table table-bordered border-primary">
+  <thead>
+    <tr>
+      <td>Hole</td>
+        <% course.courseScorecard.forEach(function(s) { %>
+          <td><%= s.hole %></td>
+        <% }) %>
+        <td>Total</td>
+    </tr>
+    <tr>
+      <td>Yardage</td>
+        <% course.courseScorecard.forEach(function(s) { %>
+            <% totalYardage + s.yardage %>
+            <td><%= s.yardage %></td>
+          <% }) %>
+        <td><%= totalYardage %></td>
+        </tr>
+    <tr>
+      <td>Par</td>
+        <% course.courseScorecard.forEach(function(s) { %>
+            <% totalPar + s.par %>
+            <td><%= s.par %></td>
+          <% }) %>
+        <td><%= totalPar %></td>
+    </tr>
+
+    <!-- INTERACTIVE SCORECARD -->
+    <section id="scorecard-parent">
+  
+      <section id="scorecard-current">
+        <h3>Current</h3>
+        <div id="scorecard-current-hole">
+          <section id="scorecard-score">      
+              <% course.courseScorecard.forEach(function(p) { %>
+                <button>
+                  <%= p.hole %>
+                </button>
+                <% }) %>
+          </section>
+    
+          <h4>Score</h4>
+          <button id="subtractFromScore" onclick="subtractFromScore()"> - </button>
+          <input id="hole-score" type="text" value="<%= course.courseScorecard[0].par %>" min="0" max="10">
+          <button id="addToScore" onclick="addToScore()"> + </button>
+          
+        </div>
+        <div id="scorecard-current-par">
+          Par:<%= course.courseScorecard[0].par %>
+          Yardage:<%= course.courseScorecard[0].yardage %>
+        </div>
+      </section>
+    
+      <section id="scorecard-next">
+        <h3>Next</h3>
+        <div id="scorecard-next-hole">Hole #</div>
+    
+      </section>
+    
+    </section>

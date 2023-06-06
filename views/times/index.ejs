@@ -3,52 +3,31 @@
 <h2>TEE TIMES SCHEDULED</h2>
 
 <div class="container">
-  <table id="time-table">
-    <thead>
-    <tr>
-      <th>Course</th>
-      <th>Date</th>
-      <th>Time</th>
-      <th>Created By</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% times.forEach(function(t) { %>
-      <% const now = new Date() - 1 %>
-      <% const timeCheck = new Date(t.date) %>
-      <% if (timeCheck > now) { %>
-        <tr>
-          <td><%= t.course.courseName %></td>
-          <td><%= t.date.toDateString() %></td>
-          <td><%= t.time %></td>
-          <td><%= t.user.name %></td>
-          <td><a href="/times/<%= t._id %>">Details</a></td>
-        </tr>
-        <% } %>
-        <% }); %>
-    </tbody>
-  </table>
+
   
   <form  method="GET" action="/times/new">
     <button id="add-tee-time" type="submit">Start a Round</button>
   </form>
 </div>
 
-<h2 class="display-6 text-center text-start">Previously Played</h2>
+<h2 class="display-6 text-center text-start">Recently Played</h2>
 <div class="container">
   <div class="row justify-content-center">
+
     <% times.forEach(function(t, idx) { %>
       <div class="card width mb-2" style="width:18rem;">
         <h5 class="card-header"><%= t.course.courseName %></h5>
         <div class="card-body">
           <h6 class="card-title"><%= t.date.toDateString() %></h6>
-          <% scorecards.forEach(function(s) { %>
-            <% if (s.scores && s.score.length) { %>
-              <h6 class="card-text"><%= t.scorecards.score %></h6>
-              <% } else { %>
-                <h6 class="card-text">No scores recorded</h6>
-                <% } %>
-          <% }) %>
+          <% let sum = 0 %>
+          <% if(typeof t.scorecards === 'object') { %>
+            <% let scoreTotal = Object.values(t.scorecards.score) %>
+            <% let reduce = scoreTotal.reduce((acc, x) => acc + x, 0); %>
+            Score Recorded: <%= reduce %>
+            <% sum += reduce %>
+          <% } else {%>
+            <p>No score entered</p>
+          <% } %>
           <p class="card-text"></p>
           <a href="/times/<%= t._id %>" class="btn btn-primary">Details</a>
           <a href="/times/<%= t._id %>" class="btn btn-danger">Directions</a>
